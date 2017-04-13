@@ -1,6 +1,33 @@
 #+TITLE: Math3283W study guiding
 
 #+BEGIN_EXPORT latex
+\newcommand\bd[1]{\text{bd }#1}
+\newcommand\cl[1]{\text{cl }#1}
+\newcommand\int[1]{\text{int }#1}
+\newcommand\lim[1]{\text{lim }#1}
+\newcommand{\def}[1]{\textit{\textbf{#1}}}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\deg{\textdegree}
+\newcommand\Real{\mathbb{R}}
+\newcommand\Natural{\mathbb{N}}
+\newcommand\Rational{\mathbb{Q}}
+\newcommand\sube{\subseteq}
+\newcommand\supe{\supseteq}
+\newcommand\sub{\subset}
+\newcommand\sup{\supset}
+\newcommand\setm{\setminus}
+\newcommand\pr{\ensuremath{'}}
+\newcommand\R{\mathcal{R}}
+\newcommand\calR{\mathcal{R}}
+\newcommand\calP{\mathcal{P}}
+\newcommand\pow{\mathscr{P}}
+\newcommand\indX{\mathscr{X}}
+\newcommand\F{\mathscr{F}}
+\newcommand\G{\mathscr{G}}
+\newcommand\nil{\varnothing}
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 \renewcommand\qedsymbol{$\blacksquare$}
@@ -880,29 +907,5 @@ even integer, then $p$ is an even integer or $q$ is an even integer" is true.
 #+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
 #+LATEX_HEADER: \documentclass{article}
 #+LATEX_HEADER: \usepackage{setspace,mathrsfs,amsmath,amsthm,amssymb,graphicx,cancel,lmodern,mathtools}
-#+LATEX_HEADER: \newcommand\bd[1]{\text{bd }#1}
-#+LATEX_HEADER: \newcommand\cl[1]{\text{cl }#1}
-#+LATEX_HEADER: \newcommand\int[1]{\text{int }#1}
-#+LATEX_HEADER: \newcommand\lim[1]{\text{lim }#1}
-#+LATEX_HEADER: \newcommand{\def}[1]{\textit{\textbf{#1}}}
-#+LATEX_HEADER: \newcommand\abs[1]{\left|#1\right|}
-#+LATEX_HEADER: \newcommand\deg{\textdegree}
-#+LATEX_HEADER: \newcommand\Real{\mathbb{R}}
-#+LATEX_HEADER: \newcommand\Natural{\mathbb{N}}
-#+LATEX_HEADER: \newcommand\Rational{\mathbb{Q}}
-#+LATEX_HEADER: \newcommand\sube{\subseteq}
-#+LATEX_HEADER: \newcommand\supe{\supseteq}
-#+LATEX_HEADER: \newcommand\sub{\subset}
-#+LATEX_HEADER: \newcommand\sup{\supset}
-#+LATEX_HEADER: \newcommand\setm{\setminus}
-#+LATEX_HEADER: \newcommand\pr{\ensuremath{'}}
-#+LATEX_HEADER: \newcommand\R{\mathcal{R}}
-#+LATEX_HEADER: \newcommand\calR{\mathcal{R}}
-#+LATEX_HEADER: \newcommand\calP{\mathcal{P}}
-#+LATEX_HEADER: \newcommand\pow{\mathscr{P}}
-#+LATEX_HEADER: \newcommand\indX{\mathscr{X}}
-#+LATEX_HEADER: \newcommand\F{\mathscr{F}}
-#+LATEX_HEADER: \newcommand\G{\mathscr{G}}
-#+LATEX_HEADER: \newcommand\nil{\varnothing}
-# #+LATEX_HEADER: \doublespacing
+
 

@@ -1,4 +1,4 @@
-% Created 2017-04-12 Wed 18:46
+% Created 2017-04-12 Wed 19:01
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
@@ -17,6 +17,21 @@
 \usepackage[margin=1.0in]{geometry}
 \documentclass{article}
 \usepackage{setspace,mathrsfs,amsmath,amsthm,amssymb,graphicx,cancel,lmodern,mathtools}
+\author{Justen Rickert}
+\date{\today}
+\title{Math3283W study guiding}
+\hypersetup{
+ pdfauthor={Justen Rickert},
+ pdftitle={Math3283W study guiding},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.0.50.1 (Org mode 9.0.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
 \newcommand\bd[1]{\text{bd }#1}
 \newcommand\cl[1]{\text{cl }#1}
 \newcommand\int[1]{\text{int }#1}
@@ -41,20 +56,6 @@
 \newcommand\F{\mathscr{F}}
 \newcommand\G{\mathscr{G}}
 \newcommand\nil{\varnothing}
-\author{Justen Rickert}
-\date{\today}
-\title{Math3283W study guiding}
-\hypersetup{
- pdfauthor={Justen Rickert},
- pdftitle={Math3283W study guiding},
- pdfkeywords={},
- pdfsubject={},
- pdfcreator={Emacs 26.0.50.1 (Org mode 9.0.5)}, 
- pdflang={English}}
-\begin{document}
-
-\maketitle
-\tableofcontents
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
@@ -67,11 +68,11 @@
 \newtheorem*{corollary}{Corollary}
 
 \section{Midterm one}
-\label{sec:orge6e0d28}
+\label{sec:org96a272d}
 \subsection{Vocabulary}
-\label{sec:org9017b11}
+\label{sec:org687136d}
 \subsubsection{Section 1.1}
-\label{sec:orge6f37f4}
+\label{sec:org98d475a}
 \begin{description}
 \item[{statement}] A sentence classified as something either true or false is a
 \emph{statement}.
@@ -99,14 +100,14 @@
 \end{center}
 
 \subsubsection{Section 1.2}
-\label{sec:orga927907}
+\label{sec:orge97f605}
 \begin{description}
 \item[{universal quantifier}] \(\forall{}x,p(x)\)
 \item[{existential quantifier}] \(\exists{}x\ni{}p(x)\)
 \end{description}
 
 \subsubsection{Section 1.3}
-\label{sec:orgaa554cd}
+\label{sec:orgb71e36c}
 \begin{description}
 \item[{deductive reasoning}] Applying a general principle to a particular case.
 \item[{\(p\Rightarrow{}q\) as a theorem}] When an implication is identified as a theorem, it is
@@ -122,7 +123,7 @@ equivalent to implication.
 \end{center}
 
 \subsubsection{Section 2.1}
-\label{sec:org84bd693}
+\label{sec:org3fc2d2a}
 \begin{description}
 \item[{subset}] \(A\sube{}B\). \(A\) is a \textbf{subset} of \(B\) (or \(A\) is \textbf{contained} in \(B\)). If we
 want to prove \(A\sube{}B\), then we must prove "if \(x\in{}A\), then \(x\in{}B\)".
@@ -144,7 +145,7 @@ of \(A\) are in \(B\), but some elements of \(B\) are not in \(A\).
 \end{description}
 
 \subsubsection{Section 2.2}
-\label{sec:org0ed579d}
+\label{sec:org0a52a8c}
 \begin{description}
 \item[{ordered pairs}] \((a,b)=\{\{a\},\{a,b\}\}\)
 \item[{Cartesian product (cross product)}] \(A\times{}B=\{(a,b)\mid{}a\in{}A\) and \(b\in{}B\}\)
@@ -180,7 +181,7 @@ A member of \(\pow\) is called a \textbf{piece} of the partition.
 \end{description}
 
 \subsubsection{Section 2.3}
-\label{sec:org1272093}
+\label{sec:org45d01fa}
 \begin{description}
 \item[{function}] Let \(A\) and \(B\) be sets. Then, a \textbf{function} from \(A\) to \(B\) is a
 nonempty relation \(f\sube{}A\times{}B\) that satisfies the following two
@@ -231,9 +232,9 @@ onto itself is called the \textbf{identity function} on \(A\), and is denoted
 Thus, \(f\circ{}f^{-1}=i_{B}\).
 \end{description}
 \subsection{Theorem}
-\label{sec:orge4665bd}
+\label{sec:org289bae6}
 \subsubsection{Section 1.4}
-\label{sec:org703ef63}
+\label{sec:org89beb80}
 \begin{itemize}
 \item This example shows a \emph{direct proof}.
 \begin{itemize}
@@ -337,7 +338,7 @@ disjunction \(p\lor{}q\), where
 \end{enumerate}
 \end{itemize}
 \subsubsection{Section 2.3}
-\label{sec:orgf6fce87}
+\label{sec:orgc030704}
 \begin{itemize}
 \item Let \(f:A\longrightarrow{}B\). Then
 \begin{enumerate}
@@ -346,7 +347,7 @@ disjunction \(p\lor{}q\), where
 \end{enumerate}
 \end{itemize}
 \subsection{Practice test}
-\label{sec:org8208308}
+\label{sec:orgbf97938}
 \begin{itemize}
 \item question (1, d)
 \begin{itemize}
@@ -458,9 +459,9 @@ integer \(j=2k^{2}-2k\) and is therefore odd. Thus, "for all integers \(p\) and 
 its contrapositive is true, i.e. "for all integers \(p\) and \(q\), if \(pq\) is an
 even integer, then \(p\) is an even integer or \(q\) is an even integer" is true.
 \section{Midterm two}
-\label{sec:org3077b31}
+\label{sec:orgef53c91}
 \subsection{The Real Numbers}
-\label{sec:orgc97beae}
+\label{sec:org92372f3}
 \begin{definition}{Well-ordering property of $\Natural$}
   If $S$ is a nonempty subset of $\Natural$, then there exists an element $m \in
   S$ such that $m \le k$ for all $k \in S$.
@@ -488,7 +489,7 @@ even integer, then \(p\) is an even integer or \(q\) is an even integer" is true
 \end{definition}
 
 \subsubsection{Examples}
-\label{sec:orgbc12762}
+\label{sec:org231ec8f}
 \begin{itemize}
 \item \uline{Example}: For which \(n\) is \(n!>n^{n}\)?
 
@@ -546,7 +547,7 @@ three quadrants. It is an equivalent procedure.
 \end{itemize}
 
 \subsection{Ordered Fields}
-\label{sec:orged049c1}
+\label{sec:orgd1c9494}
 \begin{definition}{Axioms of an Ordered Field}
   We begin by assuming the existence of a set \Real, called the set of real
   numbers, and two operations ``+'' and ``$\cdot$'', called addition and
@@ -622,7 +623,7 @@ three quadrants. It is an equivalent procedure.
 \end{definition}
 
 \subsection{Completeness Axiom}
-\label{sec:org59859b1}
+\label{sec:org02f2ffe}
 \begin{definition}{Irrational.}
   Let $p$ be a prime number. Then $\sqrt{p}$ is not a rational number.
 \end{definition}
@@ -672,7 +673,7 @@ three quadrants. It is an equivalent procedure.
 \end{definition}
 
 \subsection{Boundaries}
-\label{sec:org03fc252}
+\label{sec:org451612e}
 \begin{definition}{Neighborhood.}
   Let $x\in\Real$ and let $\varepsilon>0$. A \textit{\textbf{neightborhood}}
   of $x$ (or an \textit{\textbf{$\varepsilon$-neightborhood}} of $x$) is a
@@ -701,17 +702,17 @@ three quadrants. It is an equivalent procedure.
 \end{definition}
 
 \subsection{Theorem}
-\label{sec:org70e3566}
+\label{sec:org80cd39a}
 \begin{itemize}
 \item The union of open sets is open.
 \item The intersection of finitely-many open sets is open.
 \end{itemize}
 \subsubsection{Section 3.3}
-\label{sec:org945739c}
+\label{sec:orgccdc12a}
 \section{Midterm three}
-\label{sec:orgac8eebf}
+\label{sec:orga479a4c}
 \subsection{Topology of the Real Numbers}
-\label{sec:orgbd9e85b}
+\label{sec:org719fdb4}
 Every bounded sequence has a convergent subsequence.
 \begin{itemize}
 \item If \(\{s_n\}\) bounded, then
@@ -765,7 +766,7 @@ be a lim sup.)
 \end{definition}
 
 \subsection{Compact Sets}
-\label{sec:org6a65270}
+\label{sec:org022bae4}
 \begin{definition}{Compact, Open Cover, and Subcover.}
   A set $S$ is said to be \textit{\textbf{compact}} if whenever it is
   contained in the union of a family $\F$ of open sets, it is contained in
@@ -793,7 +794,7 @@ be a lim sup.)
 \end{definition}
 
 \subsection{Sequences}
-\label{sec:org2138fae}
+\label{sec:org2fa21a3}
 \begin{definition}{Sequence.}
   A sequence $S$ is a function whose domain is the set $\Natural$ of natural
   numbers. Denoted by its value of $n$ at $s_n$ instead of $S(n)$ or by listing
@@ -844,7 +845,7 @@ $(s_n)_{n=1}^\infty$.
 \end{definition}
 
 \subsection{Limit Theorem}
-\label{sec:orgf41da43}
+\label{sec:org456a7bd}
 \begin{definition}{Limit Theorems.}
   \begin{enumerate}
     \item $\lim{(s_n + t_n)} = s + t$
@@ -903,7 +904,7 @@ $\lim{(1/s_n)} = 0$.
 \end{definition}
 
 \subsection{Monotone Sequences and Cauchy Sequences}
-\label{sec:org85fe435}
+\label{sec:orgecca96d}
 \begin{definition}{Monotone Sequences.}
   A sequence $(s_n)$ of real numbers is \textit{\textbf{increasing}} if $s_n \le
   s_{s_n+1}$ for all $n \in \Natural$ and is \textit{\textbf{decreasing}} if
