@@ -21,8 +21,12 @@
 \newcommand\Real{\mathbb{R}}
 \newcommand\Natural{\mathbb{N}}
 \newcommand\Rational{\mathbb{Q}}
+
 \newcommand\sube{\subseteq}
 \newcommand\supe{\supseteq}
+\newcommand\sub{\subset}
+\newcommand\sup{\supset}
+
 \newcommand\setm{\setminus}
 \newcommand\pr{\ensuremath{'}}
 \newcommand\R{\mathcal{R}}
@@ -32,7 +36,8 @@
 \newcommand\indX{\mathscr{X}}
 \newcommand\F{\mathscr{F}}
 \newcommand\G{\mathscr{G}}
-\newcommand\nil{\varnothing}
+
+\newcommand\empty{\varnothing}
 #+END_EXPORT
 
 #+NAME: Definition definition

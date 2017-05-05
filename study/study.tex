@@ -1,4 +1,4 @@
-% Created 2017-05-03 Wed 18:29
+% Created 2017-05-05 Fri 15:35
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
@@ -47,8 +47,12 @@
 \newcommand\Real{\mathbb{R}}
 \newcommand\Natural{\mathbb{N}}
 \newcommand\Rational{\mathbb{Q}}
+
 \newcommand\sube{\subseteq}
 \newcommand\supe{\supseteq}
+\newcommand\sub{\subset}
+\newcommand\sup{\supset}
+
 \newcommand\setm{\setminus}
 \newcommand\pr{\ensuremath{'}}
 \newcommand\R{\mathcal{R}}
@@ -58,7 +62,8 @@
 \newcommand\indX{\mathscr{X}}
 \newcommand\F{\mathscr{F}}
 \newcommand\G{\mathscr{G}}
-\newcommand\nil{\varnothing}
+
+\newcommand\empty{\varnothing}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
@@ -72,157 +77,186 @@
 \pagebreak
 
 \section{Midterm one}
-\label{sec:org947029f}
+\label{sec:orge6489e7}
 \subsection{Vocabulary}
-\label{sec:orged738d1}
-\subsubsection{Section 1.1}
-\label{sec:orgde5c4b2}
+\label{sec:org0197882}
+\subsubsection{Logical Connectives}
+\label{sec:org7579ac5}
+\begin{definition}[statement]  
+A sentence classified as something either true or false is a \textbf{statement}.
+\end{definition}
+
+\begin{definition}[sentential connectives] 
+  \textbf{not}, \textbf{and}, \textbf{or}, \textbf{if ... then}, \textbf{if and
+    only if}.
+  \begin{itemize}
+  \item negation $\neg p$ represents the logical opposite of $p$.
+  \item conjunction $p \land{} q$
+  \item disjunction $p \lor q$
+  \item implication/conditional $p \rightarrow q$, antecedant $p$ statement, consequent
+    $q$ statement
+  \item biconditional $p \leftrightarrow q$
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[tautology] 
+  A statement which is true in all cases. examples:
+  \begin{center}
+    $\neg(p \land{} q) \leftrightarrow (\neg p \lor \neg q)$ \\
+    $\neg(p \lor q) \leftrightarrow (\neg p \land \neg q)$ \\
+    $\neg(p \rightarrow q) \leftrightarrow (p \lor \neg q)$
+  \end{center}
+\end{definition}
+
+\subsubsection{Quantifiers}
+\label{sec:orgcb17323}
+\begin{definition}[Quantifier]
+  Given a statement $p(x)$, \textbf{universal quantifier} is $\forall x,
+  p(x)$. \textbf{existential quantifier} is $\exists x \ni p(x)$
+\end{definition}
+
+\subsubsection{Techniques of Proof}
+\label{sec:org950d434}
+\begin{definition}[Inductive Reasoning]
+  Making a general conclusion on the basis of looking at individual cases.
+\end{definition}
+
+\begin{definition}[Counterexample]
+  Finding an example such that the statement is false.
+\end{definition}
+
+
+\begin{definition}[Deductive Reasoning]
+  Applying a general principle to a particular case to make a conclusion.
+  Most of the proofs encountered in mathematics are based on this type of
+  reasoning.
+\end{definition}
+
+\begin{definition}[Hypothesis $\Rightarrow$ Conclusion]
+  When an implication is identified as a theorem, it is customary to refer to
+  $p$ as the \textbf{hypothesis} and $q$ as the \textbf{conclusion}.
+\end{definition}
+
+\begin{definition}[Contrapositive]
+  The \textbf{converse} of $p \rightarrow q$ is $q \rightarrow p$, but is not
+  equivalent to the implication.
+
+  The \textbf{inverse} of $p \rightarrow q$ is $\neg p \Rightarrow \neg q$, but
+  is not equivalent to the implication.
+
+  The \textbf{contrapositive} is both the converse and the inverse at once, and
+  is tautologically equivalent to the implication.
+  \begin{center}
+    $(p \rightarrow q) \leftrightarrow (\neg q \rightarrow \neg p)$
+  \end{center}
+\end{definition}
+
+\begin{definition}[Contradiction]
+  The letter $c$ is used to represent a statement that is always false. Suc
+  ha statement is called a \textbf{contradiction}.
+\end{definition}
+
+\subsubsection{Set Operations}
+\label{sec:orgc78dbe0}
 \begin{description}
-\item[{statement}] A sentence classified as something either true or false is a
-\emph{statement}.
-\item[{sentential connectives}] \emph{not}, \emph{and}, \emph{or}, \emph{if\dots{} then}, \emph{if and only if}.
+\item[{Subset}] \(A \sube{} B\). \(A\) is a \textbf{subset} of \(B\) (or \(A\) is \textbf{contained} in \(B\)). If
+we want to prove \(A \sube{} B\), then we must prove "if \(x \in{} A\), then \(x
+               \in{} B\)"
 \begin{description}
-\item[{conjunction}] \(p\land{}q\)
-\item[{disjunction}] \(p\lor{}q\)
-\item[{implication/conditional}] \(p\Rightarrow{}q\)
-\begin{description}
-\item[{antecedant}] \(p\) statement
-\item[{consequent}] \(q\) statement
+\item[{Proper Subset}] \(A \sub B\). \((\forall a \in{} A, a \in{} B) \land (\exists b \in{} B \ni{} b \notin A)\). That
+is, all elements of \(A\) are in \(B\), but some elements of
+\(B\) are not in \(A\)
+\item[{Equal}] A set \(A\) is equal to a set \(B\) provided that \(A \sube B\) and \(A
+                \supe B\) (\(A \sube B\) and \(B \sube A\))
 \end{description}
-\item[{biconditional}] \(p\Leftrightarrow{}q\)
-\item[{negation}] \(\neg{}p\) represents the logical opposite of \(p\).
-\end{description}
-\item[{tautology}] A statement which is true in all cases.
+
+\item[{Closed Interval}] \([a,b]\). \(a,b \in [a,b]\)
+
+\item[{Open Interval}] \((a,b)\). \(a,b \notin (a,b)\)
+
+\item[{Half--Open (Half--Closed) Interval}] \([a,b)\), or \((a,b]\)
+
+\item[{Union}] \(A \cup B = \{x \mid x \in A\) or \(x \in B\}\)
+
+\item[{Intersection}] \(A \cap B = \{x \mid x \in A\) and \(x \in B\}\)
 \begin{itemize}
-\item examples:
+\item If \(A \cap B = \varnothing\), then \(A\) and \(B\) are said to be \textbf{disjoint}
 \end{itemize}
-\end{description}
-\begin{center}
-\(\neg(p\land{}q)\Leftrightarrow[(\neg{}p)\lor(\neg{}q))]\) \\
-\(\neg(p\lor{}q)\Leftrightarrow[(\neg{}p)\land(\neg{}q))]\) \\
-\(\neg(p\Rightarrow{}q)\Leftrightarrow[p\lor(\neg{}q)]\) \\
-\end{center}
 
-\subsubsection{Section 1.2}
-\label{sec:orgcf8068e}
-\begin{description}
-\item[{universal quantifier}] \(\forall{}x,p(x)\)
-\item[{existential quantifier}] \(\exists{}x\ni{}p(x)\)
+\item[{Complement}] \(A \setminus B = \{x \mid x \in A\) and \(x \notin B\}\)
 \end{description}
 
-\subsubsection{Section 1.3}
-\label{sec:org5b2dd0e}
-\begin{description}
-\item[{deductive reasoning}] Applying a general principle to a particular case.
-\item[{\(p \Rightarrow q\) as a theorem}] When an implication is identified as a theorem, it is
-customary to refer to \(p\) as the \textbf{hypothesis} and \(q\) as the \textbf{conclusion}.
-\item[{converse}] \(p\Rightarrow{}q\) has the converse \(q \Rightarrow p\). Not tautologically equivalent to
-implication.
-\item[{inverse}] \(p \Rightarrow{} q\) has the inverse \((\neg p) \Rightarrow (\neg q)\). Not tautologically
-equivalent to implication.
-\item[{contrapositive}] Tautologically equivalent to the implication.
-\end{description}
-\begin{center}
-\((p \Rightarrow{} q) \Leftrightarrow (\neg q \Rightarrow \neg p)\)
-\end{center}
+\subsubsection{Relations}
+\label{sec:orgc30e475}
+\begin{definition}[Ordered Pairs]
+  ordered pairs :: $(a, b) = \{\{a\}, \{a, b\}\}$
+\end{definition}
 
-\subsubsection{Section 2.1}
-\label{sec:org0ddc1a2}
-\begin{description}
-\item[{subset}] \(A\sube{}B\). \(A\) is a \textbf{subset} of \(B\) (or \(A\) is \textbf{contained} in \(B\)). If we
-want to prove \(A\sube{}B\), then we must prove "if \(x\in{}A\), then \(x\in{}B\)".
-\begin{description}
-\item[{proper subset}] \(A\sub{}B\). \(\forall{}a\in{}A, a\in{}B\), but \(\exists{}b\in{}B\ni{}b\notin{}A\). That is, all elements
-of \(A\) are in \(B\), but some elements of \(B\) are not in \(A\).
-\item[{equal}] A set \(A\) is equal to a set \(B\) provided that \(A\sube{}B\) and \(A\supe{}B\) (or
-\(A\sube{}B\) and \(B\sube{}A\)).
-\end{description}
-\item[{closed interval}] \([a,b]\)
-\item[{open interval}] \((a,b)\)
-\item[{half--open (half--closed) interval}] \([a,b)\), or \((a,b]\).
-\item[{union}] \(A \cup B = \{x \mid x\in A\) or \(x\in B\}\)
-\item[{intersection}] \(A \cap B=\{x \mid x\in A\) and \(x \in B\}\)
-\begin{itemize}
-\item If \(A\cap{}B=\varnothing\), then \(A\) and \(B\) are said to be \textbf{disjoint}
-\end{itemize}
-\item[{complement}] \(A \setminus{} B=\{x\mid{}x\in{}A\) and \(x\notin{}B\}\)
-\end{description}
+\begin{theorem}
+  $(a, b) = (c, d)$ $\iff$ $a = c$ and $b = d$
+\end{theorem}
 
-\subsubsection{Section 2.2}
-\label{sec:org63a44fd}
-\begin{description}
-\item[{ordered pairs}] \((a,b)=\{\{a\},\{a,b\}\}\)
-\item[{Cartesian product (cross product)}] \(A\times{}B=\{(a,b)\mid{}a\in{}A\) and \(b\in{}B\}\)
-\item[{relation}] A \textbf{relation} between \(A\) and \(B\) is any subset \(\R\) of \(A\times{}B\). We say
-that an element a in \(A\) is related by \(\R\) to an element in \(b\) in
-\(B\) if \((a,b)\in{}\R\). The first set \(A\) is referred to as the \textbf{domain},
-of the relation and denoted dom \(\R\). If \(B=A\), then we speak of a
-relation \(\R\sube{}A\times{}A\) being a \textbf{relation on} \(A\).
-\begin{description}
-\item[{equivalence relation}] A relation \(\R\) is an \textbf{equivalence relation} if:
+\begin{definition}[Cartesian Product (Cross Product)]
+  $A \times B = \{(a,b) \mid a \in A$ and $b \in B\}$
+\end{definition}
+
+\begin{definition}[Relation]
+  A \textbf{relation} between $A$ and $B$ is any subset $\R$ of $A \times B$. We say
+  that an element a in $A$ is related by $\R$ to an element in $b$ in $B$ if
+  $(a, b) \in \R$. The first set $A$ is referred to as the *domain*, of the
+  relation and denoted $\dom \R$. If $B=A$, then we speak of a relation $\R \sube A
+  \times A$ being a relation on $A$.
+\end{definition}
+
+\begin{definition}[Equivalence Relation]
+  A relation $\R$ is an \textbf{equivalence relation} if:
+  \begin{enumerate}
+  \item $x \R x$ \hfill (reflexive property)
+  \item If $x \R y$, then $y \R x$ \hfill (symmetric property)
+  \item If $x \R y$ and $y \R z$, then $x \R z$ \hfill (transitive property)
+  \end{enumerate}
+
+  An \textbf{equivalence class} (with respect to $\R$) of $x \in S$ is defined to
+  be the set
+  \begin{center}
+    $E_{x} = \{y \in S \mid y \R x\}$
+  \end{center}
+\end{definition}
+
+\begin{definition}[Partition]
+We  see that  an equivalence  relation  $\R$ on  a  set $S$  breaks $S$  into
+\textbf{disjoint} pieces in a natural way.  A \textbf{partition} of a set $S$
+is a collection $\pow$ of nonempty subsets of $S$ such that
 \begin{enumerate}
-\item \(x\R{}x\) \hfill (reflexive property)
-\item If \(x\R{}y\), then \(y\R{}x\) \hfill (symmetric property)
-\item If \(x\R{}y\) and \(y\R{}z\), then \(x\R{}z\) \hfill (transitive property)
+  \item Each $x \in S$ belongs to some subset $A \in \pow$.
+  \item For all $A, B \in \pow$, if $A \ne B$, then $A \cap B = \varnothing$.
 \end{enumerate}
-\item[{equivalence class}] An equivalence class (with respect to \(\R\)) of \(x\in{}S\) is
-defined to be the set
-\begin{center}
-\(E_{x}=\{y\in{}S\mid{}y\R{}x\}\)
-\end{center}
-\begin{description}
-\item[{partition}] Also, we see that an equivalence relation \(\R\) on a set \(S\)
-breaks \(S\) into \textbf{disjoint} pieces in a natural way. A partition
-of a set \(S\) is a collection \(\pow\) of nonempty subsets of
-\(S\) such that
-\begin{enumerate}
-\item Each \(x\in{}S\) belongs to some subset \(A\in\pow\).
-\item For all \(A,B\in\pow\), if \(A\ne{}B\), then \(A\cap{}B=\nil\).
-\end{enumerate}
-\end{description}
-A member of \(\pow\) is called a \textbf{piece} of the partition.
-\end{description}
-\end{description}
+A member of $\pow$ is called a \textbf{piece} of the partition.
+\end{definition}
 
-\subsubsection{Section 2.3}
-\label{sec:org8f3acfd}
-\begin{description}
-\item[{identity function}] A function defined on a set A that maps each element in A
-onto itself is called the \textbf{identity function} on \(A\), and is denoted
-\(f^{-1}\circ{}f=i_{A}\). Furthermore, if \(f(x)=y\), then \(x=f^{-1}(y)\), so that
-\begin{center}
-\(f\circ{}f^{-1}(y)=f(f^{-1}(y))=f(x)=y\).
-\end{center}
-Thus, \(f\circ{}f^{-1}=i_{B}\).
-\end{description}
-
-\subsection{Theorem}
-\label{sec:orga86b921}
-\subsubsection{Section 1.4}
-\label{sec:org0438e66}
+\subsubsection{Examples}
+\label{sec:orgb0b3e6d}
 \begin{itemize}
 \item This example shows a \emph{direct proof}.
 \begin{itemize}
-\item For every \(\epsilon>0\) there exists a \(\delta>0\) such that
-\end{itemize}
+\item For every \(\varepsilon > 0\) there exists a \(\delta > 0\) such that
 \begin{center}
-\(1-\delta<x<1+\delta\) implies that \(5-\epsilon<2x+3<5+\epsilon\).
+\(1 - \delta < x < 1 + \delta\) implies that \(5 - \varepsilon < 2x +3 < 5 + \varepsilon\).
 \end{center}
 
-\begin{enumerate}
-\item Begin by letting \(\epsilon\) be an arbitrary positive number, i.e. \(\epsilon>0\). We need to
-use this \(\epsilon\) to find a positive \(\delta\) with the property that
+\item Begin by letting \(\varepsilon\) be an arbitrary positive number, i.e. \(\varepsilon > 0\). We
+need to use this \(\varepsilon\) to find a positive \(\delta\) with the property that
 \begin{center}
-\(1-\delta<x<1+\delta\) implies that \(5-\epsilon<2x+3<5+\epsilon\).
+\(1 - \delta < x < 1 + \delta\) implies that \(5 - \epsilon < 2x + 3 < 5 + \epsilon\).
 \end{center}
-\item Given any \(\epsilon>0\), let \(\delta=\epsilon/2\). \(\delta>0\), and whenever
+\item Given any \(\varepsilon > 0\), let \(\delta = \varepsilon / 2\). \(\delta > 0\), and whenever
 $$1-\delta<x<1+\delta$$
 we have $$1-\frac{\epsilon}{2}<x<1+\frac{\epsilon}{2}$$
 so that $$2-\epsilon<2x<2+\epsilon$$
 and $$5-\epsilon<2x+3<5+\epsilon$$
 thus \\ 
 \center $1-\delta<x<1+\delta$ implies that $5-\epsilon<2x+3<5+\epsilon$.
-\end{enumerate}
+\end{itemize}
 \item This example shows a \emph{indirect proof}.
 \begin{itemize}
 \item Let \(f\) be an integrable function, so that
@@ -302,132 +336,11 @@ disjunction \(p\lor{}q\), where
 \(x\) is a real number, then \(x\le\abs{x}\)
 \end{enumerate}
 \end{itemize}
-\subsubsection{Section 2.3}
-\label{sec:org738adf8}
-\begin{itemize}
-\item Let \(f:A\longrightarrow{}B\). Then
-\begin{enumerate}
-\item \(f^{-1}:B\longrightarrow{}A\) is bijective.
-\item \(f^{-1}\circ{}f=i_{A}\) and \(f\circ{}f^{-1}=i_{B}\).
-\end{enumerate}
-\end{itemize}
-\subsection{Practice test}
-\label{sec:orgb08de96}
-\begin{itemize}
-\item question (1, d)
-\begin{itemize}
-\item Define \(A_{n}=(3,4+\frac{1}{n})\), an open interval in \(\Real\), for each natural
-number \(n\). Without writing a proof, determine $$\bigcap\limits_{n=1}^{\infty}A_{n}$$.
-\end{itemize}
-\end{itemize}
-\textbf{answer}: When \(n=1\), \(A_{1}=(3,4+1)=(3,5)\). When \(n=2\), the
-\(A_{1}=(3,4+\frac{1}{2})=(3,4.5)\). Here, consider \(f(n)=4+\frac{2}{n}\), the
-function for the upper bound of \(A_{n}\) for each \(n\). Here, the forward difference
-quotient \(\Delta{}f(1)=f(2)-f(1)=4.5-5<0\). Considering the function \(f(n)\), this
-difference quotient will always be negative. Therefore, the highest upper bound
-over all the parts of the union will be \(f(1)=5\). Since the lower bound function
-is constant, the lowest lower bound over all the parts of the union will be 3.
-Therefore, \(A_{n}\sube{}(3,5)\), and \(A_{n}=\{(3,4+\frac{1}{n})\mid{}n\in{}\Natural\}\).
-
-\begin{itemize}
-\item question (2, a) For all \(x\), there exists \(y\) such that for all \(z\), if \(y<x\)
-then \(z<y\).
-\begin{enumerate}
-\item write the negation:
-\item Determine whether the original statement is true or false. Write "true" or
-"false", and then justify your answer by proving the original statment or
-the negation that you wrote in (a):
-\end{enumerate}
-\end{itemize}
-\textbf{answer 1}: There exists \(x\) such that for all \(y\), there exists \(z\) such that
-\(y<x\) and \(z\ge{}y\). \\
-\textbf{answer 2}: Let \(x\) be some constant \(x_{0}\), such that \(y<x_{0}\) for all y. Since this
-\(y\) can be any of all the numbers in \(\Real\), say \(y\ge{}x_{0}\), the statement \(y<x_{0}\)
-is not true. Given a conjunction of a false statement and any other statement,
-the conjunction is false. Since this statement is the negation of the original
-statement and false, the original statement must be true. \\
-
-\begin{itemize}
-\item question (3,a)
-\begin{enumerate}
-\item Suppose that \(A=\{1,2,3\}\), \(B=\{4,5\}\), and \(C=\{6,7,8\}\). Let \(R\) be the
-relation on \(A\times{}C\) given by \(\{(1,7),(3,6),(3,7)\}\) and \(S\) by the relation
-on \(B\times{}C\) given by \(\{(4,7),(4,8),(5,6)\}\). Find \(S^{-1}\circ{}R\).
-\item Given \(R\) a relation on \(A\times{}B\) and \(S\) a relation on \(B\times{}C\), prove that
-\((S\circ{}R)^{-1}=R^{-1}\circ{}S^{-1}\).
-\item Suppose that A and B are non-empty sets. Prove that \(A\times{}B=B\times{}A\) if and only
-if \(A=B\).
-\end{enumerate}
-\end{itemize}
-\textbf{answer 1}: Since \(S\) is defined, and \(S^{-1}=\{(c,b)\in{}C\times{}B\mid{}(b,c)\in{}S\}\),
-\(S^{-1}=\{(7,4),(8,4),(6,5)\}\). Then,
-\(S^{-1}\circ{}R=\{(7,4),(8,4),(6,5)\}\circ\{(1,7),(3,6),(3,7)\}\). This can be
-simplified to \(S^{-1}\circ{}R=\{(1,4),(3,5),(3,4)\}\). \\
-\textbf{answer 2}: Consider \(a\in{}A\), \(b\in{}B\), and \(c\in{}C\). \(S\circ{}R\) is a relation such that
-\((a,c)\in{}S\circ{}R\sube{}A\times{}C\). Thus, \((S\circ{}R)^{-1}=\{(c,a)\in{}C\times{}A\mid{}(a,c)\in{}S\circ{}R\}\).
-
-Given \((a,b)\in{}R\), by definition of Inverse \(R^{-1}=\{(b,a)\in{}B\times{}A\mid{}(a,b)\in{}R\}\).
-Given \((b,c)\in{}S\), by definition of Inverse \(S^{-1}=\{(c,b)\in{}C\times{}B\mid{}(b,c)\in{}S\}\).
-Then,
-\(R^{-1}\circ{}S^{-1}=\{(c,a)\in{}C\times{}A\mid{}\exists{}b\in{}B\ni{}(a,b)\in{}R\land{}(b,c)\in{}S\}\).
-However, this is the same as
-\(R^{-1}\circ{}S^{-1}=\{(c,a)\in{}C\times{}A\mid{}(a,c)\in{}S\circ{}R\}\), by the
-definition of Cartesian Product.
-
-Thus, since \((S\circ{}R)^{-1}\) and \(R^{-1}\circ{}S^{-1}\) have the same definitions, it must be
-that \((S\circ{}R)^{-1}=R^{-1}\circ{}S^{-1}\).
-
-\textbf{answer 3}: (\(\Leftarrow\)) Let \(A=B\). It must be that \(A\times{}B=B\times{}A\), as having both leads to
-\(B\times{}B=B\times{}B\) or \(A\times{}A=A\times{}A\) which are true. \\
-(\(\Rightarrow\)) Let \(A\times{}B=B\times{}A\), and remember \(A\) and \(B\) are non-empty sets. By definition,
-\(A\times{}B=\{(a,b)\mid{}a\in{}A\land{}b\in{}B\}\). Just as well, by definition,
-\(B\times{}A=\{(b,a)\mid{}a\in{}A\land{}b\in{}B\}\). Having this implies that for every \((a,b)\in{}A\times{}B\) and
-the corresponding \((b,a)\in{}B\times{}A\), \((a,b)=(b,a)\). Thus, \(A=B\). \\
-In sum, this means \(A\times{}B=B\times{}A\) if and only if \(A=B\).
-
-\begin{itemize}
-\item question (4, a) Prove which one is true and which one is false.
-\begin{itemize}
-\item For all subsets \(S\) and \(T\) of a universal set \(U\), we have \(U\setminus(S\setminus{}T)\sube(U\setminus{}S)\cup{}T\).
-\item For all subsets \(S\) and \(T\) of a universal set \(U\), we have \(U\setminus(S\setminus{}T)\sube(U\setminus{}S)\cap{}T\).
-\end{itemize}
-\end{itemize}
-\textbf{answer}: The first statement to consider, \(U\setminus{}S\), has definition
-\(U\setminus{}S=\{u\in{}U\mid{}u\notin{}S\}\). Then \((U\setminus{}S)\cup{}T=\{u\in{}U\mid{}u\notin{}S\}\cup\{u\in{}T\}\). Which is to say
-that \(u\in{}U\), \(u\notin{}S\), and \(u\in{}T\), so that \((U\setminus{}S)\cup{}T=\{u\mid{}u\in{}U\land{}u\notin{}S\land{}u\in{}T\}\). \\
-Consider the next statement \(A\), in particular \(U\setminus(S\setminus{}T)\). By definition
-\(S\setminus{}T=\{u\in{}S\mid{}u\notin{}T\}\). By definition, again, \(U\setminus{}(S\setminus{}T)=\{u\in{}U\mid{}u\notin{}(S\setminus{}T)\}\),
-that is \(U\setminus{}(S\setminus{}T)=\{u\in{}U\mid{}u\notin{}S\land{}u\in{}T)\}\). Which is to say that \(u\in{}U\), \(u\notin{}S\), and
-\(u\in{}T\), so that \(U\setminus{}(S\setminus{}T)=\{u\mid{}u\in{}U\land{}u\notin{}S\land{}u\in{}T\}\). \\
-Thus, statement A, \(U\setminus(S\setminus{}T)\sube(U\setminus{}S)\cup{}T\), is the true statement.
-\begin{itemize}
-\item question (4, b) Give a counterexample to the false statement, where \(U=\Real\),
-and \(S\) and \(T\) are open interval in \(\Real\).
-\end{itemize}
-\textbf{answer}: Let subset \(S=\{x\in\Real\mid{}x>1\}\), and \(T=\{x\in\Real\mid{}x<1\}\). \(S\)
-and \(T\) are disjoint, meaning \(U\setminus{}(S\setminus{}T)=U\setminus{}S\). So, we have \(U\setminus{}S\sube{}(U\setminus{}S)\cap{}T\). By
-definition of set intersection, \((U\setminus{}S)\cap{}T=\{x\in\Real\mid{}x\in{}(U\setminus{}S)\land{}x\in{}T\}\), where
-\(U\setminus{}S=\{x\in\Real\mid{}x\in{}U\land{}x\notin{}S\}\). Here, we have \(U\setminus{}S=\{x\in\Real\mid{}x\le{}1\}\), and
-\((U\setminus{}S)\cap{}T=\{x\in\Real\mid{}x\le1\land{}x<1\}\) which is \((U\setminus{}S)\cap{}T=\{x\in\Real\mid{}x<1\}\). Just
-as well, it can be seen that \(U\setminus(S\setminus{}T)\supe(U\setminus{}S)\cap{}T\), which is sort of the opposite of
-the statement B.
-\begin{itemize}
-\item question (5) Prove that, for all integers \(p\) and \(q\), if \(pq\) is an even
-integer, then \(p\) is an even integer or \(q\) is an even integer.
-\end{itemize}
-\textbf{answer}: Consider the contrapositive of the predicate in the statement: For all
-integers \(p\) and \(q\), if \(p\) is an odd integer and \(q\) is an odd integer, then
-\(pq\) is an odd integer. Let \(p=2k-1\) and \(q=2k-1\), for integers \(k\). Then, it is
-straightforward that \(pq=(2k-1)(2k-1)=4k^{2}-4k+1=2(2k^{2}-2k)+1=2j+1\) for some
-integer \(j=2k^{2}-2k\) and is therefore odd. Thus, "for all integers \(p\) and \(q\), if
-\(p\) and \(q\) are odd integers, then \(pq\) is an odd integer" being true means that
-its contrapositive is true, i.e. "for all integers \(p\) and \(q\), if \(pq\) is an
-even integer, then \(p\) is an even integer or \(q\) is an even integer" is true.
 
 \section{Midterm two}
-\label{sec:orgc319b3f}
+\label{sec:org27a26db}
 \subsection{Functions}
-\label{sec:orgdc160f5}
+\label{sec:org1e1654e}
 \begin{definition}[Function]
   Let $A$ and $B$ be sets. A \textbf{function} from $A$ to $B$ is nonempty relation
   $f \sube A \times B$ that satisfies the following two conditions:
@@ -443,6 +356,16 @@ even integer, then \(p\) is an even integer or \(q\) is an even integer" is true
   write $f : A \rightarrow B$ to indicate $f$ has domain $A$ and codomain $B$. The range
   of $f$, denoted  $\rng f$, is the  set of all second elements  of members of
   $f$. That is, $$\{ b \in B : \exists a \in A \ni (a,b) \in f \}.$$
+\end{definition}
+
+\begin{definition}[Identity]
+  A function defined on a set A that maps each element in A
+  onto itself is called the \textbf{identity function} on $A$, and is denoted
+  $f^{-1}\circ{}f=i_{A}$. Furthermore, if $f(x) = y$, then $x = f^{-1}(y)$, so that
+
+  $$f \circ f^{-1}(y) = f(f^{-1}(y)) = f(x) = y$$.
+
+  Thus, $f \circ f^{-1} = i_{B}$.
 \end{definition}
 
 \begin{definition}[Surjective]
@@ -478,7 +401,7 @@ it is both surjective and injective.
 \end{definition}
 
 \subsection{Cardinality}
-\label{sec:org86cb30b}
+\label{sec:org7c2d47c}
 \begin{definition}[Equinumerous]
   Two sets $S$ and $T$ are called \textbf{equinumerous}, written $S \sim T$, if
   there exists a bijective function from $S$ onto $T$.
@@ -511,7 +434,7 @@ it is both surjective and injective.
 \end{theorem}
 
 \subsection{The Real Numbers}
-\label{sec:org4624654}
+\label{sec:org0f369e1}
 \begin{axiom}
   (Well-ordering property of $\Natural$) If $S$ is a nonempty subset of
   $\Natural$, then there exists an element $m \in S$ such that $m \le k$ for all
@@ -545,7 +468,7 @@ it is both surjective and injective.
 \end{theorem}
 
 \subsection{Ordered Fields}
-\label{sec:orgc3aee3b}
+\label{sec:org5321c1a}
 \begin{axiom}[Axioms of an Ordered Field]
   We begin by assuming the existence of a set \Real, called the set of real
   numbers, and two operations ``+'' and ``$\cdot$'', called addition and
@@ -629,7 +552,7 @@ it is both surjective and injective.
 \end{theorem}
 
 \subsection{Completeness Axiom}
-\label{sec:org46c618d}
+\label{sec:org3c0f923}
 \begin{definition}[Irrational]
   Let $p$ be a prime number. Then $\sqrt{p}$ is not a rational number.
 \end{definition}
@@ -697,7 +620,7 @@ it is both surjective and injective.
 \end{theorem}
 
 \subsection{Examples}
-\label{sec:org39b181a}
+\label{sec:org8e65f25}
 \begin{itemize}
 \item \uline{Example}: For which \(n\) is \(n!>n^{n}\)?
 
@@ -755,9 +678,9 @@ three quadrants. It is an equivalent procedure.
 \end{itemize}
 
 \section{Midterm three}
-\label{sec:org232f747}
+\label{sec:org40a7fff}
 \subsection{Boundaries}
-\label{sec:org7d0c439}
+\label{sec:org266f16c}
 \begin{definition}[Interior Point and Boundary Point]
   Let $S$ be a subset of $\Real$. A point $x$ in $\Real$ is an
   \textit{\textbf{interior point}} of $S$ if there exists a neighborhood $N$
@@ -806,7 +729,7 @@ three quadrants. It is an equivalent procedure.
 \end{theorem}
 
 \subsection{Topology of the Real Numbers}
-\label{sec:org80d24c9}
+\label{sec:org67b264d}
 Every bounded sequence has a convergent subsequence.
 \begin{itemize}
 \item If \(\{s_n\}\) bounded, then
@@ -838,7 +761,7 @@ sup.)
 \end{definition}
 
 \subsection{Compact Sets}
-\label{sec:org8e75d45}
+\label{sec:org82b3fa3}
 \begin{definition}[Compact, Open Cover, and Subcover]
   A set $S$ is said to be \textit{\textbf{compact}} if whenever it is
   contained in the union of a family $\F$ of open sets, it is contained in
@@ -866,7 +789,7 @@ sup.)
 \end{definition}
 
 \subsection{Sequences}
-\label{sec:org579f6fd}
+\label{sec:org69964c4}
 \begin{definition}[Sequence]
   A sequence $S$ is a function whose domain is the set $\Natural$ of natural
   numbers. Denoted by its value of $n$ at $s_n$ instead of $S(n)$ or by listing
@@ -917,7 +840,7 @@ $(s_n)_{n=1}^\infty$.
 \end{definition}
 
 \subsection{Limit Theorem}
-\label{sec:org6fa30c4}
+\label{sec:orgb063131}
 \begin{definition}[Limit Theorems]
   \begin{enumerate}
     \item $\lim{(s_n + t_n)} = s + t$
@@ -976,7 +899,7 @@ $\lim{(1/s_n)} = 0$.
 \end{definition}
 
 \subsection{Monotone Sequences and Cauchy Sequences}
-\label{sec:org662301d}
+\label{sec:org6f63b9d}
 \begin{definition}[Monotone Sequences]
   A sequence $(s_n)$ of real numbers is \textit{\textbf{increasing}} if $s_n \le
   s_{s_n+1}$ for all $n \in \Natural$ and is \textit{\textbf{decreasing}} if
@@ -1006,9 +929,9 @@ If $(s_n)$ is a \textit{\textbf{Cauchy}} sequence, then $(s_n)$ converges.
 \end{proof}
 
 \section{Final}
-\label{sec:org81529e1}
+\label{sec:org0c692d8}
 \subsection{Limits of Functions}
-\label{sec:orgea0d142}
+\label{sec:orgaa0a514}
 \begin{definition}[Limit of $f$ at $c$]
   Let $f : D \rightarrow \Real$ and let $c$  be an accumulation point of $D$. We
   say that a real number $L$ is a limit of $f$ at $c$, if
@@ -1042,7 +965,7 @@ converges to $L$.
 \end{theorem}
 
 \subsection{Continuity}
-\label{sec:orgf288a5c}
+\label{sec:orgece7594}
 \begin{definition}[Continuous]
   Let $f  : D \rightarrow \Real$  and let $c$ be  an accumulation point of  $D$. We say
   that $f$ is continuous at $c$, if
@@ -1103,7 +1026,7 @@ converges to $L$.
 \end{corollary}
 
 \subsection{Properties of Continuous Functions}
-\label{sec:org19f4222}
+\label{sec:org92d4deb}
 \begin{definition}[Bounded]
   A function $f: D \rightarrow \Real$ is said to be bounded if its range $f(D)$
   is a bounded subset of $\Real$. That is, $f$ is bounded if there exists $M \in
@@ -1140,7 +1063,7 @@ converges to $L$.
 \end{theorem}
 
 \subsection{Uniform Continuity}
-\label{sec:org6f67e02}
+\label{sec:org6d1f5e5}
 \begin{definition}[Uniform Continuity]
   Let $f : D \rightarrow \Real$. We say that $f$ is \textbf{uniformly continuous} on
   $D$ if
@@ -1154,7 +1077,7 @@ converges to $L$.
 \end{definition}
 
 \subsection{Differentiation}
-\label{sec:org452fa48}
+\label{sec:org97b2d8e}
 \begin{definition}[Derivative]
   Let $f$ be a real-valued function defined on an interval $I$ containing the
   point $c$. (We  allow the possibility that  $c$ is an endpoint  of $I$.) We
@@ -1205,7 +1128,7 @@ differentiable at $c$ and $$(g \circ f)\pr(c) = g\pr(f(c)) \cdot f\pr(c)$$
 \end{theorem}
 
 \subsection{The Mean Value Theorem}
-\label{sec:org4be3939}
+\label{sec:org586e70c}
 \begin{theorem}
   If $f$ is differentiable on an open interval $(a,b)$ and if $f$ assumes its
   maximum or minimum at a point $c \in (a,b)$, then $f\pr(c) = 0$.
@@ -1258,7 +1181,7 @@ differentiable at $c$ and $$(g \circ f)\pr(c) = g\pr(f(c)) \cdot f\pr(c)$$
 \end{theorem}
 
 \subsection{Taylor's Theorem}
-\label{sec:org61a5793}
+\label{sec:orgaa04587}
 \begin{theorem}
   (Taylor's Theorem) Let $f$ and its first $n$ derivatives be continuous on
   $[a,b]$ and differentiable on $(a,b)$, and let $x_0 \in [a,b]$. Then for each
@@ -1271,7 +1194,7 @@ differentiable at $c$ and $$(g \circ f)\pr(c) = g\pr(f(c)) \cdot f\pr(c)$$
 \end{theorem}
 
 \subsection{Integration}
-\label{sec:org1389c53}
+\label{sec:orgc4ae2d2}
 \begin{definition}[Partition]
   Let $[a,b]$ be an interval in $\Real$. A \textbf{partition} $P$ of $[a,b]$ is
   a finite set of points $\{ x_0, x_1, ..., x_n \}$ such that $$a = x_0 < x_1 <
@@ -1341,5 +1264,5 @@ $F$ is differentiable at $c$ and $F\pr(c) = f(c)$.
 \end{theorem}
 
 \subsection{Infinite Series}
-\label{sec:org4977e5c}
+\label{sec:org0399c08}
 \end{document}

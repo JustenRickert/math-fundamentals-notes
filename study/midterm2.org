@@ -19,6 +19,16 @@
     $f$. That is, $$\{ b \in B : \exists a \in A \ni (a,b) \in f \}.$$
   \end{definition}
 
+  \begin{definition}[Identity]
+    A function defined on a set A that maps each element in A
+    onto itself is called the \textbf{identity function} on $A$, and is denoted
+    $f^{-1}\circ{}f=i_{A}$. Furthermore, if $f(x) = y$, then $x = f^{-1}(y)$, so that
+
+    $$f \circ f^{-1}(y) = f(f^{-1}(y)) = f(x) = y$$.
+
+    Thus, $f \circ f^{-1} = i_{B}$.
+  \end{definition}
+
   \begin{definition}[Surjective]
     A function $f : A \rightarrow B$ is called \textbf{surjective} (or is said to map $A$
     \textbf{onto} $B$) if $B = \rng f$. A surjective function is also referred to
