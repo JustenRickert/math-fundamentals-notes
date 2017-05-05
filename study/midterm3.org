@@ -1,0 +1,308 @@
+
+* Boundaries
+  #+NAME: Interior Point, Boundary Point.
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Interior Point and Boundary Point]
+    Let $S$ be a subset of $\Real$. A point $x$ in $\Real$ is an
+    \textit{\textbf{interior point}} of $S$ if there exists a neighborhood $N$
+    of $x$ such that $N \sube S$. If for every neighborhood $N$ of $x$, $N \cap
+    S \ne \varnothing$ and $N \cap (\Real \setminus S) \ne \varnothing$, then $x$ is called a
+    \textit{\textbf{boundary point}} of $S$. The set of all interior points of
+    $S$ is denoted by int $S$, and the set of all boundary points of $S$ is
+    denoted by $\bd{S}$.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Neighborhood
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Neighborhood]
+    Let $x\in\Real$ and let $\varepsilon>0$. A \textit{\textbf{neightborhood}}
+    of $x$ (or an \textit{\textbf{$\varepsilon$-neightborhood}} of $x$) is a
+    set of the form $N(x; \varepsilon) = \{ y \in \Real : \abs{x - y} < \varepsilon \}$.
+    \begin{remark}
+      The professor uses the notation: $$N_\varepsilon(x) = \{ y \in \Real :
+      \abs{x - y} < \varepsilon \},$$ which is probably nicer.
+    \end{remark}
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Deleted Neighborhood
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Deleted Neighborhood]
+    Let $x \in \Real$ and let $\varepsilon > 0$. A \textit{\textbf{deleted neighborhood}} of
+    $x$ is a set of  the form $N^*(x; \varepsilon)=\{ y \in \Real : 0 <  \abs{x - y} < \varepsilon\}$.
+    Clearly, $N^*(x; \varepsilon) = N(x; \varepsilon) \setminus \{ x \}$
+    \begin{remark}
+      The professor uses the notation: $$N_\varepsilon^*(x) = \{  y \in \Real : 0 < \abs{x -
+      y} < \varepsilon\},$$ which is probably nicer.
+    \end{remark}
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Open and Closed Sets
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Open and Closed Sets]
+    Let   $S  \sube   \Real$.  If   $\bd{S}  \sube   S$,  then   $S$  is   said  to   be
+    \textit{\textbf{closed}}. If  $\bd{S} \sube \Real \setminus  S$, then $S$ is  said to be
+    \textit{\textbf{open}}.
+  \end{definition}
+
+  \begin{theorem}
+    \begin{itemize}
+    \item A set $S$ is open $\iff$ $S = \interior S$. Equivalently, $S$ is open $\iff$
+      every point in $S$ is an interior point of $S$.
+
+    \item A set $S$ is closed $\iff$ its complement $\Real \setminus S$ is open.
+    \item The union of any collection of open sets is an open set.
+    \item The intersection of any finite collection of open sets is an open set.
+    \end{enumerate}
+  \end{theorem}
+  #+END_EXPORT
+
+* Topology of the Real Numbers
+  Every bounded sequence has a convergent subsequence.
+  - If $\{s_n\}$ bounded, then
+    1. for every $\varepsilon$, $\exists N \in \Natural \ni s_n < m + \varepsilon$ when $n \ge N$. (Else there
+       are infinitely  many $s_n \ge  m + \varepsilon$, so  there can't be  a lim
+       sup.)
+    2. for every $\varepsilon > 0$, $\forall i \in \Natural, \exists k>i$ with $s_k > m - \varepsilon$.
+       (There are infinitely many  $s_k \in (m-\varepsilon, m+\varepsilon)$, else
+       $m-\varepsilon$ is upper bound for all limits of subsequences.)
+
+  #+Name: Accumulation Points
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Accumulation Points]
+    Let $S$ be a subset of $\Real$. A point $x$ in $\Real$ is an
+    \textbf{accumulation point} of $S$ if every deleted neighborhood of $x$
+    contains a point of $S$. That is, for every $\varepsilon > 0$, $N^{*}(x,\varepsilon) \cup S \ne
+    \varnothing$. The set of all accumulation points of $S$ is denoted by
+    $S\pr$. If $x\in S$ and $x\notin S\pr$, then $x$ is called an \textbf{isolated
+    point} of $S$.
+  \end{definition}
+  #+END_EXPORT
+
+  #+Name: Closure
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Closure]
+    Let $S \sube \Real$. Then the closure of $S$, denoted $\text{cl } S$, is
+    defined by $$\text{cl } S = S \cup S\pr,$$ where $S\pr$ is the set of all
+    accumulation points of $S$.
+
+    Also, $$\text{cl } S = S \cup \text{bd } S.$$
+  \end{definition}
+  #+END_EXPORT
+
+* Compact Sets
+  #+Name: Compact Sets, Open Cover, and Subcover
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Compact, Open Cover, and Subcover]
+    A set $S$ is said to be \textit{\textbf{compact}} if whenever it is
+    contained in the union of a family $\F$ of open sets, it is contained in
+    the union of some finite number of the sets in $\F$. If $\F$ is a family of
+    open sets whose union contains $S$, then $\F$ is called an
+    \textit{\textbf{open cover}} of $S$. If $\G \sube \F$ and $\G$ is also an open
+    cover of $S$, then $\G$ is called a \textit{\textbf{subcover}} of $S$.
+
+    \begin{corollary}
+        $S$ is compact $\overset{Heine-Borel}{\iff}$ $S$ is closed and bounded
+        $\iff$ every infinite subset of S has an accumulation point in $S$.
+
+        $S$ is a nonempty closed bounded subset of $\Real$ $\Rightarrow$ $S$ has a maximum
+        and a minimum.
+    \end{corollary}
+  \end{definition}
+  #+END_EXPORT
+   
+  #+Name: Heine--Borel
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Heine--Borel]
+    A subset $S$ of $\Real$ is compact iff $S$ is closed and bounded.
+  \end{definition}
+  #+END_EXPORT
+
+  #+Name: Bolzano--Weierstrass
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Bolzano--Weierstrass]
+    If a bounded subset $S$ of $\Real$ contains infinitely many points, then there
+    exists at least one point in $\Real$ that is an accumulation point of $S$.
+  \end{definition}
+  #+END_EXPORT
+
+* Sequences
+  #+NAME: Sequence
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Sequence]
+    A sequence $S$ is a function whose domain is the set $\Natural$ of natural
+    numbers. Denoted by its value of $n$ at $s_n$ instead of $S(n)$ or by listing
+    its values $(s_1, s_2, s_3, ...)$. $s_n$ is the $n^{th}$ term of the sequence.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Convergence, Divergence, Limit
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Convergence, Divergence, Limit]
+    A sequence $(s_n)$ is said to \textbf{\textit{converge}} to the real number
+    $s$ provided that
+    \begin{center}
+      for every $\varepsilon > 0$ there exists a natural number $N$ such that for
+      all $n \in \Natural$, $n \ge N$ implies that $\abs{s_n - s} < \varepsilon$.
+    \end{center}
+    If $(s_n)$ converges to $s$, then $s$ is called the \textbf{\textit{limit}}
+    of the sequence $(s_n)$, and we write $\underset{n\rightarrow\infty}{\text{lim}} s_n = s$,
+    lim $s_n = s$, or $s_n \rightarrow s$. If a sequence does not converge to a real
+    number, it is said to \textbf{\textit{diverge}}.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Subsequences
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Subsequence]
+  Let $(s_n)_{n=1}^\infty$ be a sequence and let $(n_k)_{k=1}^{\infty}$ be any sequence
+  of natural numbers such that $n_1 < n_2 < ...$. The sequence
+  $(s_{n_k})_{k=1}^{\infty}$ is called a \textit{\textbf{subsequence}} of
+  $(s_n)_{n=1}^\infty$.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Limit Superior and Limit Inferior
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Limit Superior and Limit Inferior]
+    Let $(s_n)$ be a bounded sequence. A \textbf{\textit{subsequential limit}}
+    of $(s_n)$ is any real number that is the limit of some subsequence of
+    $(s_n)$. If $S$ is the set of all subsequential limits of $(s_n)$, then we
+    define the \textbf{\textit{limit superior}} (or \textbf{\textit{upper
+    limit}}) of $(s_n)$ to be $$\text{lim sup } s_n = \text{sup } S.$$
+    Similarly, we define the \textit{\textbf{limit inferior}} (or
+    \textit{\textbf{lower limit}}) of $(s_n)$ to be $$\text{lim inf } s_n =
+    \text{inf } S.$$
+  \end{definition}
+  #+END_EXPORT
+   
+  #+NAME: Bounded Sequence
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Bounded Sequence]
+    A sequence $(s_n)$ is said to be \textit{\textbf{bounded}} if the range $\{
+    s_n : n \in \Natural \}$ is a bounded set, that is, if there exists an $M \ge
+    0$ such that $\abs{s_n} \le M$ for all $n \in \Natural$
+
+    Every convergent sequence is bounded.
+
+    If a sequence converges, its limit is unique.
+  
+    Every bounded sequence has a convergent subsequence.
+  \end{definition}
+  #+END_EXPORT
+
+* Limit Theorem
+  #+NAME: Limit Theorems
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Limit Theorems]
+    \begin{enumerate}
+      \item $\lim{(s_n + t_n)} = s + t$
+      \item $\lim{(ks_n)} = ks$ and $\lim{(k + s_n)} = k + s$, for any $k \in
+        \Real$
+      \item $\lim{(s_n t_n)} = st$
+      \item $\lim{(s_n/t_n)} = s/t$, provided that $t_n \ne 0$ for all $n$ and $t
+        \ne 0$
+    \end{enumerate}
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Lesser Convergence
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Lesser Convergence]
+    Suppose that $(s_n)$ and $(t_n)$ are convergent sequences with $\lim{s_n} =
+    s$, and $\lim{t_n} = t$. If $s_n \le t_n$ for all $n \in \Natural$, then $s
+    \le t$.
+  \end{definition}
+
+  \begin{corollary}
+    If $(t_n)$ converges to $t$ and $t_n \ge 0$ for all $n \in \Natural$, then $t
+    \ge 0$.
+  \end{corollary}
+  #+END_EXPORT
+
+  #+NAME: Ratio Convergence
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Ratio Convergence]
+    Suppose that $(s_n)$ is a sequence of positive terms and that the sequence of
+    rations $(s_{n+1} / s_n)$ converges to $L$. If $L < 1$, then $\lim{s_n} = 0$
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Divergence
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Divergence]
+    A sequence $(s_n)$ is said to \textit{\textbf{diverge to}} $+\infty$, and we
+    write $\lim{s_n} = +\infty$ provided that
+    \begin{center}
+      for every $M \in \Real$ there exists a natural number $N$ such that $n \ge
+      N$ implies that $s_n > M$.
+    \end{center}
+
+    A sequence $(s_n)$ is said to \textit{\textbf{diverge to}} $-\infty$, and we
+    write $\lim{s_n} = +\infty$ provided that
+    \begin{center}
+      for every $M \in \Real$ there exists a natural number $N$ such that $n \ge
+      N$ implies that $s_n < M$.
+    \end{center}
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Greater Divergence
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Greater Divergence]
+    Suppose that $(s_n)$ and $(t_n)$ are sequences such that $s_n \le t_n$ for all
+    $n \in \Natural$.
+    \begin{enumerate}
+      \item If $\lim{s_n} = +\infty$, then $\lim{t_n} = +\infty$.
+      \item If $\lim{t_n} = -\infty$, then $\lim{s_n} = -\infty$.
+    \end{enumerate}
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Inverse Divergence
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Inverse of Divergence]
+  Let $(s_n)$ be a sequence of positive numbers. Then $\lim{s_n} = +\infty$ $\iff$
+  $\lim{(1/s_n)} = 0$.
+  \end{definition}
+  #+END_EXPORT
+
+* Monotone Sequences and Cauchy Sequences
+  #+NAME: Monotone
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Monotone Sequences]
+    A sequence $(s_n)$ of real numbers is \textit{\textbf{increasing}} if $s_n \le
+    s_{s_n+1}$ for all $n \in \Natural$ and is \textit{\textbf{decreasing}} if
+    $s_n \ge s_{n+1}$ for all $n \in \Natural$. A sequence is
+    \textbf{\textit{monotone}} if it is increasing or decreasing.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Monotone Convergence Theorem
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Monotone Convergence Theorem]
+    A monotone sequence is convergent $\iff$ it is bounded.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Cauchy Sequence
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Cauchy Sequence]
+  If, for every $\varepsilon>0$, there exists $N \in \Natural$ such that if $m,n \ge N$ then
+  $\abs{s_n - s_m} < \varepsilon$.
+
+  Every convergent sequence is \textit{\textbf{Cauchy}}.
+
+  If $(s_n)$ is a \textit{\textbf{Cauchy}} sequence, then $(s_n)$ converges.
+  \end{definition}
+
+  \begin{proof}
+     Given any $\varepsilon > 0$, choose $N$ such that $\abs{s_n - s} < \frac{\epsilon}{2}$ if
+    $n \ge N$ (which is possible to do since $s_n \rightarrow s$). Then $\abs{s_n - s_m} =
+    \abs{s_n - s + s - s_m}$ because adding and subtracting by the limit is the
+    same as doing nothing, and, by the triangle inequality, $\abs{s_n - s + s -
+    s_m} \le \abs{s_n - s} + \abs{s_m - s} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2}$.
+  \end{proof}
+  #+END_EXPORT

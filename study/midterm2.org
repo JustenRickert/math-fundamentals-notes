@@ -1,0 +1,366 @@
+
+* Functions
+  #+NAME: Function
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Function]
+    Let $A$ and $B$ be sets. A \textbf{function} from $A$ to $B$ is nonempty relation
+    $f \sube A \times B$ that satisfies the following two conditions:
+    \begin{enumerate}
+    \item \textit{Existence}: For all $a$ in $A$, there exists a $b$ in $B$ such
+      that $(a, b) \in f$.
+    \item \textit{Uniqueness}: If $(a,b) \in f$ and $(a, c) \in f$, then $b = c$.
+    \end{enumerate}
+
+    That is, given any element $a$ in $A$, there is one and only one element $b$
+    in $B$ such  that $(a, b) \in f$. Set  $A$ is called the domain of  $f$ and is
+    denoted by $\dom f$.  Set $B$ is referred to as the codomain  of $f$. We may
+    write $f : A \rightarrow B$ to indicate $f$ has domain $A$ and codomain $B$. The range
+    of $f$, denoted  $\rng f$, is the  set of all second elements  of members of
+    $f$. That is, $$\{ b \in B : \exists a \in A \ni (a,b) \in f \}.$$
+  \end{definition}
+
+  \begin{definition}[Surjective]
+    A function $f : A \rightarrow B$ is called \textbf{surjective} (or is said to map $A$
+    \textbf{onto} $B$) if $B = \rng f$. A surjective function is also referred to
+    as a \textbf{surjection}
+  \end{definition}
+
+  \begin{definition}[Injective]
+    A function $f : A \rightarrow B$ is called \textbf{injective} (or \textbf{one-to-one})
+    if, for all $a$ and $a\pr$ in $A$, $f(a) = f(a\pr)$. An injective function
+    is also referred to as an \textbf{injection}.
+  \end{definition}
+
+  \begin{definition}[Bijective]
+  A function $f : A \rightarrow B$ is called \textbf{bijective} or a \textbf{bijection} if
+  it is both surjective and injective.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Composition
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Composition]
+    If $f$ and $g$ are functions with $f : A  \rightarrow B$ and $g : B \rightarrow C$, then for any
+    $a \in A$, $f(a) \in B$. But $B$ is  the domain of $g$, so $g$ can be applied to
+    $f(a)$. This yields $g(f(a))$, an element of $C$. Thus we have established a
+    correspondance between $a$ in $A$  and $g(f(a))$ in $C$. This correspondance
+    is called the composition function of $f$ and  $g$ and is denoted by $g \circ f$
+    (read ``$g$ of $f$''). It  defines a function $g \circ f : A \rightarrow  C$ given by $$(g \circ
+    f)(a) = g(f(a)) \text{ for all } a \in A.$$
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Inverse
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Inverse]
+    Let $f : A \rightarrow B$ be bijective. The inverse function of $f$ is the function
+    $f^{-1}$ given by $$f^{-1} = \{ (y,x) \in B \times A : (x,y) \in f \}.$$
+  \end{definition}
+  #+END_EXPORT
+
+* Cardinality
+  #+NAME: Equinumerous, Finite/Infinite, Cardinal
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Equinumerous]
+    Two sets $S$ and $T$ are called \textbf{equinumerous}, written $S \sim T$, if
+    there exists a bijective function from $S$ onto $T$.
+  \end{definition}
+
+  \begin{definition}[Finite or Infinite]
+    A set $S$ is said to be \textbf{finite} if $S = \varnothing$ or if there
+    exists $n \in \Natural$ and a bijection $f : \{ 1, 2, ..., n \} \rightarrow S$. If a set
+    is not finite, it is said to be \textbf{infinite}.
+  \end{definition}
+  
+  \begin{definition}[Cardinal number]
+    The \textbf{cardinal number} of $I_n$ is $n$, and if $S \sim I_n$, then we say
+    that S \textbf{has \textit{n} elements}. The cardinal number of
+    $\varnothing$ is taken to be 0. If a cardinal number is not finite, it is
+    called \textbf{transfinite}.
+  \end{definition}
+
+  \begin{theorem}
+    Let $S$ be a countable set and let $T \sube S$. Then $T$ is countable.
+  \end{theorem}
+  #+END_EXPORT
+
+  #+NAME: Power Set
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Power Set]
+    Given any set $S$, let $\pow(S)$ denote the collection of all the subsects
+    of $S$. The set $\pow(S)$ is called the \textbf{power set} of $S$.
+  \end{definition}
+
+  \begin{theorem}
+    For any set $S$, we have $\abs{S} < \abs{\pow(S)}$.
+  \end{theorem}
+  #+END_EXPORT
+  
+* The Real Numbers
+  #+NAME: Well-Ordering of $\Natural$
+  #+BEGIN_EXPORT latex
+  \begin{axiom}
+    (Well-ordering property of $\Natural$) If $S$ is a nonempty subset of
+    $\Natural$, then there exists an element $m \in S$ such that $m \le k$ for all
+    $k \in S$.
+  \end{axiom}
+  #+END_EXPORT
+
+  #+NAME: Mathematical Induction
+  #+BEGIN_EXPORT latex
+  \begin{theorem}
+    (Mathematical Induction) A technique of mathematical proof. Let $P(n)$ be a
+    statement that is either true or false for each $n \in \Natural$. Then $P(n)$
+    is true for all $n \in \Natural$, provided that
+    \begin{enumerate}
+    \item $P(1)$ is true
+    \item Whenever $P(k)$ is true, for some number $k$, then $P(k+1)$ is true.
+    \end{enumerate}
+    \begin{proof}
+      (By contradiction) Given statements $P(n)$, $n\in\Natural$. Show if we have
+      properties 1) and 2), then $P(n)$ holds for all $n$. Suppose $P(n)$ false
+      for some $n$. Let $F=\{n\in\Natural : P(n) \text{ false}\}$. $F$ is
+      non-empty by assumption, so by well-ordering principle it has a least
+      element, say $n_{0}\ne{}1$. Consider $n_{0}-1$, a natural number, so that
+      $P(n_{0}-1)$ is true, since otherwise $n_{0}$ wasn't the smallest element
+      of $F$.
+    \end{proof}
+    \begin{remark}[\textit{Slight Generalization}]
+      For proving $p(n)$ for all $n \ge n_0$, then prove:
+      \begin{enumerate}
+      \item $p(n_0$) is true.
+      \item if $p(k)$ is true for $k$, then $p(k + 1)$ is true with $k \ge n_0$
+      \end{enumerate}
+    \end{remark}
+  \end{theorem}
+  #+END_EXPORT
+
+* Ordered Fields
+  #+NAME: Axioms of an Ordered Field
+  #+BEGIN_EXPORT latex
+  \begin{axiom}[Axioms of an Ordered Field]
+    We begin by assuming the existence of a set \Real, called the set of real
+    numbers, and two operations ``+'' and ``$\cdot$'', called addition and
+    multiplication, such that the following properties apply :---
+    \begin{itemize}
+    \item [A1. ] For all $x,y \in \Real$, $x + y \in \Real$ and if $x = w$ and $y
+      = z$, then $x + y = w + z$.
+    \item [A2. ] For all $x,y \in \Real$, $x + y = y + x$.
+    \item [A3. ] For all $x,y,z \in \Real$, $x + (y + z) = (x + y) + z$.
+    \item [A4. ] There is a unique real number $0$ such that $x + 0 = x$, for all
+      $x \in \Real$.
+    \item [A5. ] For each $x \in \Real$ there is a unique real number $-x$ such
+      that $x + (-x) = 0$.
+    \item [M1. ] For all $x,y \in \Real$, $x \cdot y \in \Real$ and if $x = w$ and
+      $y = z$, then $x \cdot y = w \cdot z$.
+    \item [M2. ] For all $x,y \in \Real$, $x \cdot y = y \cdot x$.
+    \item [M3. ] For all $x,y,z \in \Real$, $x \cdot (y \cdot z) =(x \cdot y)
+      \cdot z$.
+    \item [M4. ] There is a unique real number $1$ such that $1 \ne 0$ and $x
+      \cdot 1 = x$ for all $x \in \Real$.
+    \item [M5. ] For each $x,y \in \Real$ with $x \ne 0$, there is a unique real
+      number $1/x$ such that $x \cdot (1/x) = 1$. We also write $x^{-1}$ or
+      $\frac{1}{x}$ in place of $1/x$.
+    \item [DL. ] For all $x,y,z \in \Real$, $x \cdot (y + z) = x \cdot y + x \cdot
+      z$.
+    \end{itemize}
+    \begin{remark}
+      These first 11 axioms are called the field axioms because they describe a
+      system know as a field in the study of abstract algebra. Axioms A2 and M2
+      are called the \textit{\textbf{commutative laws}} and axioms A3 and M3 are
+      the \textit{\textbf{associative laws}}. Axiom DL is the
+      \textit{\textbf{distributive law}} that shows how addition and
+      multiplication relate to each other. Because of A1 and M1, we can think of
+      addition and multiplication as functions that map $\Real \times \Real$ into
+      $\Real$. When writing multiplication we often omit the raised dot and write
+      $xy$ instead of $x \cdot y$.
+    \end{remark}
+    In addition to the field axioms, the real numbers also satisfy four order
+    axioms.
+    \begin{itemize}
+    \item [O1. ] For all $x,y \in \Real$, exactly one of the relations $x = y$, $x
+      > y$, or $x < y$ holds (\textit{\textbf{trichotomy law}}).
+    \item [O2. ] For all $x,y,z \in \Real$, if $x < y$ and $y < z$, then $x < z$.
+    \item [O3. ] For all $x,y,z \in \Real$, if $x < y$, then $x + z < y + z$.
+    \item [O4. ] For all $x,y,z \in \Real$, if $x < y$ and $z > 0$, then $xz <
+      yz$.
+    \end{itemize}
+  \end{axiom}
+  #+END_EXPORT
+
+  #+NAME: Ordering of Rational Functions
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Ordering of Rational Functions]
+    If p/q and f/g are rational functions, then we say that 
+    \begin{align*}
+      \frac{p}{q} > \frac{f}{g} & \iff \frac{p}{q} - \frac{f}{g} > 0 \\
+                                & \iff \frac{pg - fq}{qg} > 0 \\
+    \end{align*}
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Absolute Value
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Absolute Value]
+    If $x \in \Real$, then the absolute value of $x$, denoted by $\abs{x}$, is
+    defined by:
+    $$\abs{x} = \begin{cases}
+      x, & $if $ x\ge 0, \\
+      -x, & $if $ x\le 0. \end{cases}$$
+
+    Let $x,y \in \Real$ and let $a \ge 0$. Then
+    \begin{itemize}
+    \item [(a) ] $\abs{x} \ge 0$,
+    \item [(b) ] $\abs{x} \le a \iff -a \le x \le a$,
+    \item [(c) ] $\abs{xy} = \abs{x} \cdot \abs{y}$,
+    \item [(d) ] $\abs{x + y} \le \abs{x} + \abs{y}$.
+    \end{itemize}
+    \begin{remark}
+      Part (d) is referred to as the \textit{\textbf{triangle inequality}}, and
+      has other forms. For example, letting $x = a - c$ and $y = c - b$, we
+      obtain $$\abs{a - b} \le \abs{ a - c} + \abs{c - b}.$$
+    \end{remark}
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME:
+  #+BEGIN_EXPORT latex
+  \begin{theorem}
+    Let $x, y \in \Real$ such that $x \le y + \varepsilon$ for every $\varepsilon > 0$. Then $x \le y$.
+  \end{theorem}
+  #+END_EXPORT
+
+* Completeness Axiom
+  #+NAME: Irrational
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Irrational]
+    Let $p$ be a prime number. Then $\sqrt{p}$ is not a rational number.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Bounds
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Bounds]
+    Let $S$ be a subset of $\Real$. If  there exists a real number $m$ such that
+    $m \ge s$ for all $s \in S$, then $m$ is called an \textit{\textbf{upper bound}}
+    of $S$, and  we say that $S$ is bounded  above. If $m \le s$ for  all $s \in S$,
+    then $m$ is a \textit{\textbf{lower bound}} of $S$ and $S$ is bounded below.
+    The set $S$  is said to be \textit{\textbf{bounded}} if  it is bounded above
+    and bounded below.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Maximum and Minimum
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Maximum and Minimum]
+    If an  upper bound $m$  of $S$ is  a member of $S$,  then $m$ is  called the
+    \textbf{maximum} (or largest  element) of $S$, and we write  $$m = \max S.$$
+    Similarly, if a lower bound of $S$ is a member of $S$, then it is called the
+    \textbf{minimum} (or least element) of $S$, denoted by $$m = \min S.$$
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Supremum and Infimum
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Supremum and Infimum]
+    Let $S$ be a  nonempty subset of $\Real$. If $S$ is  bounded above, then the
+    least upper  bound of  $S$ is called  its \textit{\textbf{supremum}}  and is
+    denoted by $\sup S$. Thus $m = \sup S$ iff
+
+    \begin{enumerate}
+      \item $m \ge s$, for all $s \in S$, and 
+      \item if $m\pr < m$, then there exists $s\pr \in S$ such that $s\pr > m\pr$.
+    \end{enumerate}
+
+    If $S$ is bounded below, then the  greatest lower bound of $S$ is called its
+    \textbf{infimum} and is denoted by $\inf S$, so $m = \inf S$.
+
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Completeness Axiom
+  #+BEGIN_EXPORT latex
+  \begin{definition}[Completeness Axiom]
+    Every nonempty subset $S$ of $\Real$ that is bounded above has a least upper
+    bound. That is, $\sup S$ exists and is a real number.
+  \end{definition}
+  #+END_EXPORT
+
+  #+NAME: Archimedean Property of $\Real$
+  #+BEGIN_EXPORT latex
+  \begin{theorem}[Archimedean Property of $\Real$]
+    The set $\Natural$ of natural numbers is unbounded above in $\Real$.
+  \end{theorem}
+
+  \begin{theorem}[Alternative Archimedean Properties]
+    Each of the following is equivalent to the Archimedean Property.
+    \begin{enumerate}
+      \item For each $z \in \Real$, there exists an $n \in \Natural$ such that $n >
+        z$.
+      \item For each $x > 0$ and for each $y \in \Real$, there exists an $n \in
+        \Natural$ such that $nx > y$
+      \item For each $x > 0$, there exists an $n \in \Natural$ such that $0 < 1/n <
+      x$.
+    \end{enumerate}
+  \end{theorem}
+  #+END_EXPORT
+
+  #+NAME: Density of $\Rational$ in $\Real$
+  #+BEGIN_EXPORT latex
+  \begin{theorem}[Density of $\Rational$ in $\Real$]
+    If $x$ and $y$ are real numbers with $x < y$, then there exists a rational
+    number $r$ such that $x < r < y$.
+  \end{theorem}
+
+  \begin{theorem}
+    If $x$ and $y$ are real numbers with $x < y$, then there exists an
+    irrational number $w$ such that $x < w < y$.
+  \end{theorem}
+  #+END_EXPORT
+   
+* Examples
+  - _Example_: For which $n$ is $n!>n^{n}$?
+
+    Expect $n!>2^n$ if $n\ge{}4$. (i.e. for all $n\ge{}4$).
+
+    Base case: True if $n_{0}=4$ since $24>16$. Suppose $k!>2^{k}$. 
+
+    Inductive step: Show: $(k+1)!>2^{k+1}$. _Easy_: $$k!>2^{k} \Rightarrow
+    (k+1)!>2^{k}(k+1)>2^{k+1}$$ since $k+1>2$ if $k\ge{}4$.
+
+  - _Example_: For $n\ge3$, if we connect $n$ points on circle $w$ with straight
+    line segments, the interior angles of the resulting polygon add up to
+    $(n-2)\cdot180\degree$.
+
+    Base case: $n=3$. Angles of triangle add up to 180\deg. 
+
+    Inductive Step: Suppose true for $k$. Prove true for k+1. By hypothesis,
+    $P_{k}$ has interior angles $(k-2)\cdot180\deg$. Triangle $P_{k+1}$ has
+    interior angles defined to be the sum of the $p_{k}$ angles and the triangle
+    with vertices $k, k+1, 1$. That is $(k-2)\cdot180\deg + 180\deg =
+    ((k+1)-2)\cdot180\deg$. \check.
+
+    #+ATTR_LATEX: :width 100
+    [[file:Midterm two/screenshot_2017-03-03_16-17-22.png]] Imagine, any number of
+    edges $k$, where the first edge is named 1. One could simply add another
+    $k+1$ edge to the list.
+      
+  - _Example_: Prove that any $2^n\times2^n$ grid of squares with any one
+    square removed can be tiled with /L/-shaped tiles.
+
+    #+ATTR_LATEX: :width 50 :caption \Leftarrow\textit{L-shaped tiles}
+    [[file:Midterm two/screenshot_2017-03-03_15-48-14.png]] Removing any box
+    results in the remaining boxes being an /L/-shaped tile.
+
+    #+ATTR_LATEX: :width 50 :caption \Leftarrow\textit{box}
+    [[file:Midterm two/screenshot_2017-03-03_16-00-29.png]] 
+
+    #+ATTR_LATEX: :width 125
+    [[file:Midterm two/screenshot_2017-03-03_16-01-43.png]] A large block can be
+    covered by /L/-shapes by hypothesis. What about other 3 blocks?
+
+    Inductive hypothesis doesn't apply to grid $2^k\times2^k$ _without_
+    removing a square. Meaning without removing one atomic box.
+
+    _Solution_: consider removing a single /L/ instead, taking away a box from
+    three quadrants. It is an equivalent procedure.

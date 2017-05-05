@@ -1,0 +1,436 @@
+#+TITLE: Math3283W study guiding
+#+LATEX_CLASS_OPTIONS: [12pt]
+#+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
+#+LATEX_HEADER: \usepackage{setspace,graphicx,lmodern}
+#+LATEX_HEADER: \usepackage{mathrsfs,amsmath,amsthm,amssymb,cancel,mathtools,breqn}
+
+#+NAME: newcommand list
+#+BEGIN_EXPORT latex
+\newcommand\bd[1]{\text{bd }#1}
+\newcommand\cl[1]{\text{cl }#1}
+\newcommand\interior[1]{\text{int }#1}
+\newcommand\lim[1]{\text{lim }#1}
+\newcommand\rng[1]{\text{rng }#1}
+\newcommand\dom[1]{\text{dom }#1}
+\newcommand\min[1]{\text{min }#1}
+\newcommand\max[1]{\text{max }#1}
+
+\newcommand{\def}[1]{\textit{\textbf{#1}}}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\deg{\textdegree}
+\newcommand\Real{\mathbb{R}}
+\newcommand\Natural{\mathbb{N}}
+\newcommand\Rational{\mathbb{Q}}
+\newcommand\sube{\subseteq}
+\newcommand\supe{\supseteq}
+\newcommand\setm{\setminus}
+\newcommand\pr{\ensuremath{'}}
+\newcommand\R{\mathcal{R}}
+\newcommand\calR{\mathcal{R}}
+\newcommand\calP{\mathcal{P}}
+\newcommand\pow{\mathscr{P}}
+\newcommand\indX{\mathscr{X}}
+\newcommand\F{\mathscr{F}}
+\newcommand\G{\mathscr{G}}
+\newcommand\nil{\varnothing}
+#+END_EXPORT
+
+#+NAME: Definition definition
+#+BEGIN_EXPORT latex
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{remark}{Remark}
+\newtheorem*{axiom}{Axiom}
+\renewcommand\qedsymbol{$\blacksquare$}
+#+END_EXPORT
+
+\pagebreak
+
+* Midterm one
+  #+INCLUDE: "midterm1.org"
+
+* Midterm two
+  #+INCLUDE: "midterm2.org"
+
+* Midterm three
+  #+INCLUDE: "midterm3.org"
+
+* Final
+** Limits of Functions
+   #+NAME: Limit of $f$ at $c$
+   #+BEGIN_EXPORT latex
+   \begin{definition}[Limit of $f$ at $c$]
+     Let $f : D \rightarrow \Real$ and let $c$  be an accumulation point of $D$. We
+     say that a real number $L$ is a limit of $f$ at $c$, if
+     \begin{center}
+       for each $\varepsilon > 0$ there exists a $\delta > 0$ such that $\abs{f(x)
+         - L)} < \varepsilon$ whenever $x \in D$ and $0 < \abs{x - c} < \delta$.
+     \end{center}
+   \end{definition}
+
+   \begin{theorem}
+     Let $f : D \rightarrow \Real$ and let $c$  be an accumulation point of $D$.
+     Then $\lim_{x \rightarrow c} f(x) = L$ $\iff$ for each neighborhood $V$ of $L$
+     there exists a deleted neighborhood $U$ of $c$ such that $f(U \cap D) \sube V$.
+   \end{theorem}
+   #+END_EXPORT
+
+   #+NAME: Sequential Criterion for Limits
+   #+BEGIN_EXPORT latex
+   \begin{theorem}
+   Let $f : D \rightarrow \Real$ and let $c$ be an accumulation point of $D$. Then
+   $\lim_{x \rightarrow c} f(x) = L$ $\iff$ for every sequence $(s_n)$ in $D$ that
+   converges to $c$ with $s_n \ne c$ for all $n$, the sequences $(f(s_n))$
+   converges to $L$.
+   \end{theorem}
+
+   \begin{theorem}
+     Let $f : D \rightarrow \Real$ and let $c$ be an accumulation point of $D$.
+     Then the following are equivalent:
+     \begin{enumerate}
+     \item $f$ does not have a limit at $c$.
+     \item There exists a sequence $(s_n)$ in $D$ with each $s_n \ne c$ such that
+       $(s_n)$ converges to $c$, but $(f(s_n))$ is not convergent in $\Real$.
+     \end{enumerate}
+   \end{theorem}
+   #+END_EXPORT
+
+** Continuity
+   #+NAME: Continuous
+   #+BEGIN_EXPORT latex
+   \begin{definition}[Continuous]
+     Let $f  : D \rightarrow \Real$  and let $c$ be  an accumulation point of  $D$. We say
+     that $f$ is continuous at $c$, if
+     \begin{center}
+       for each $\varepsilon > 0$  there exists a $\delta > 0$ such that  $\abs{f(x) - L)} < \varepsilon$
+       whenever $x \in D$ and $\abs{x - c} < \delta$.
+     \end{center}
+     If $f$ is continuous at each point of a subset $S$ of $D$, then $f$ is said
+     to be \textbf{continuous on $S$}. If $f$ is continuous on its domain $D$,
+     then $f$ is said to be a \textbf{continuous function}.
+   \end{definition}
+   #+END_EXPORT
+
+   #+NAME: Theorems
+   #+BEGIN_EXPORT latex
+   \begin{theorem}
+     Let $f : D \rightarrow \Real$ and let $c \in D$. Then the following three
+     conditions are equivalent:
+     \begin{enumerate}
+     \item $f$ is continuous at $c$.
+     \item If $(x_n)$ is any sequence in $D$ such that $(x_n)$ converges to $c$,
+       then $\lim_{n \rightarrow \infty} f(x) = f(c)$.
+     \item For every neighborhood $V$ of $f(c)$ there exists a neighborhood $U$ of
+       $c$ such that $f(U \cap D) \sube V$.
+     \item If $c$ is an accumulation point of $D$, then $f$ has a limit at $c$ and
+       $\lim_{x \rightarrow c} f(x) = f(c)$.
+     \end{enumerate}
+   \end{theorem}
+
+   \begin{theorem}
+     Let $f : D \rightarrow \Real$ and let $c \in D$. Then $f$ is discontinuous at
+     $c$ $\iff$ there exists a sequence $(x_n)$ in $D$ such that $(x_n)$ converges
+     to $c$ but the sequence $(f(x_n))$ does not converge to $f(c)$.
+   \end{theorem}
+
+   \begin{theorem}
+     Let $f : D \rightarrow \Real$ and let $c \in D$. Suppose that $f$ and $g$ are
+     continuous at $c$. Then
+     \begin{enumerate}
+     \item $f + g$ and $fg$ are continuous at $c$, and
+     \item $f / g$ is continuous at $c$ if $g(c) \ne 0$
+     \end{enumerate}
+   \end{theorem}
+
+   \begin{theorem}
+     Let $f : D \rightarrow \Real$ and $g : E \rightarrow \Real$ be functions such
+     that $f(D) \sube E$. If $f$ is continuous at a point $c \in D$ and $g$ is
+     continuous at $f(c)$, then the composition $g \circ f : D \rightarrow \Real$
+     is continuous at $c$.
+   \end{theorem}
+
+   \begin{theorem}
+     A function $f : D \rightarrow \Real$ is continuous on $D$ $\iff$ for every
+     open set $G \sube \Real$ there exists an open set $H \sube \Real$ such that $H \cap
+     D = f^{-1}(G)$.
+   \end{theorem}
+
+   \begin{corollary}
+     A function $f: \Real \rightarrow \Real$ is continuous $\iff$ $f^{-1}(G)$ is
+     open in $\Real$ whenever $G$ is open in $\Real$.
+   \end{corollary}
+   #+END_EXPORT
+
+** Properties of Continuous Functions
+   #+NAME: Properties
+   #+BEGIN_EXPORT latex
+   \begin{definition}[Bounded]
+     A function $f: D \rightarrow \Real$ is said to be bounded if its range $f(D)$
+     is a bounded subset of $\Real$. That is, $f$ is bounded if there exists $M \in
+     \Real$ such that $\abs{f(x)} \le M$ for all $x \in D$
+   \end{definition}
+
+   \begin{theorem}
+     Let $D$ be a compact subset of $\Real$ and suppose that $f : D \rightarrow
+     \Real$ is continuous. Then $f(D)$ is compact.
+   \end{theorem}
+
+   \begin{corollary}
+     Let $D$ be a compact subset of $\Real$ and suppose that $f : D \rightarrow
+     \Real$ is continuous. Then $f$ assumes minimum and maximum values on $D$. That
+     is, there exist points $x_1$ and $x_2$ in $D$ such that $f(x_1) \le f(x) \le
+     f(x_2)$ for all $x \in D$.
+   \end{corollary}
+
+   \begin{lemma}
+     Let $f : [a,b] \rightarrow \Real$ be continuous and suppose that $f(a) < 0 <
+     f(b)$. Then there exists a point $c$ in $(a,b)$ such that $f(c) = 0$.
+   \end{lemma}
+   #+END_EXPORT
+
+   #+NAME: Intermediate Value Theorem
+   #+BEGIN_EXPORT latex
+   \begin{definition}[Intermediate Value Theorem]
+     Suppose that $f : [a,b] \rightarrow \Real$ is continuous. Then $f$ has the
+     intermediate value property on $[a,b]$. That is, if $k$ is any value between
+     $f(a)$ and $f(b)$ [\textit{i.e.}, $f(a) < k < f(b)$ or $f(b) < k < f(a)$],
+     then there exists $c \in (a,b)$ such that $f(c) = k$.
+   \end{definition}
+
+   \begin{theorem}
+     Let $I$ be a compact interval and suppose that $f : I \rightarrow \Real$ is a continuous
+     function. Then the set $f(I)$ is a compact interval.
+   \end{theorem}
+   #+END_EXPORT
+
+** Uniform Continuity
+   #+NAME: Uniform Continuous
+   #+BEGIN_EXPORT latex
+   \begin{definition}[Uniform Continuity]
+     Let $f : D \rightarrow \Real$. We say that $f$ is \textbf{uniformly continuous} on
+     $D$ if
+     \begin{center}
+       for every $\varepsilon > 0$ there exists a $\delta > 0$ such that $\abs{f(x)
+         - f(y)} < \varepsilon$ whenever $\abs{x - y} < \delta$ and $x,y \in D$.
+     \end{center}
+     A function is continuous at a point, but uniform continuity is a property of a
+     that applies to a function \textit{on a set}. We never speak of a function
+     being uniformly continuous at a point.
+   \end{definition}
+   #+END_EXPORT
+
+** Differentiation
+   #+NAME: Derivative
+   #+BEGIN_EXPORT latex
+   \begin{definition}[Derivative]
+     Let $f$ be a real-valued function defined on an interval $I$ containing the
+     point $c$. (We  allow the possibility that  $c$ is an endpoint  of $I$.) We
+     say that $f$ is  differentiable at $c$ (or has a derivative  at $c$) if the
+     limit $$\underset{x  \rightarrow c}{\lim} \frac{f(x) -  f(c)}{x - c}$$ exists  and is
+     finite.  We denote  the  derivative of  $f$  at $c$  by  $f\pr(c)$ so  that
+     $$f\pr(c) = \underset{x \rightarrow c}{\lim} \frac{f(x) - f(c)}{x - c}$$ whenever the
+     limit exists and  is finite. If the function $f$  is differentiable at each
+     point of the set $S \sube I$, then $f$ is said to be differentiable on $S$, and
+     the function $f\pr : S \rightarrow \Real$ is called the derivative of $f$ on $S$.
+   \end{definition}
+
+   \begin{theorem}
+     Let $I$ be an  interval containing the point $c$ and suppose that  $f : I \rightarrow
+     \Real$. Then $f$ is differentiable at $c$ $\iff$ for every sequence $(x_n)$
+     in $I$  that converges  to $c$  with $x_n \ne  c$ for  all $n$,  the sequence
+     $$\left( \frac{f(x_n) - f(c)}{x_n - c} \right)$$ converges. Furthermore, if
+     $f$ is  differentiable at $c$,  then the  sequence of quotients  above will
+     converge to $f\pr(c)$.
+   \end{theorem}
+
+   \begin{theorem}
+     If $f : I \rightarrow \Real$ is differentiable at a point $c \in I$, then $f$ is
+     continuous at $c$.
+   \end{theorem}
+
+   \begin{theorem}
+     Suppose that $f : I \rightarrow \Real$ and $g : I \rightarrow \Real$ are differentiable at $c \in
+     I$. Then
+     \begin{enumerate}
+     \item If $k \in \Real$, then the function $kf$ is differentiable at $c$
+       and $$(kf)\pr(c) = k \cdot f\pr(c).$$
+     \item The function $f + g$ is differentiable at $c$ and $$(f + g)\pr(c) =
+       f\pr(c) + g\pr(c)$$
+     \item (Product Rule) The function $fg$ is differentiable at $c$
+       and $$(fg)\pr(c) = f(c)g\pr(c) + g(c)f\pr(c)$$
+     \item (Quotient Rule) If $g(c) \ne 0$, then the function $f / g$ is
+       differentiable at $c$ and $$\left( \frac{f}{g} \right)\pr (c) =
+       \frac{g(c)f\pr(c) - f(c)g\pr(c)}{[g(c)]^2}$$
+     \end{enumerate}
+   \end{theorem}
+   #+END_EXPORT
+
+   #+NAME: Chain Rule
+   #+BEGIN_EXPORT latex
+   \begin{theorem}
+   (Chain Rule) Let $I$ and $J$ be intervals in $\Real$, let $f : I \rightarrow \Real$ and
+   $g : J \rightarrow \Real$, where $f(I) \sube J$, and let $c \in I$. If $f$ is differentiable
+   at $c$ and $g$ is differentiable at $f(c)$, then the composite function $g \circ f$ is
+   differentiable at $c$ and $$(g \circ f)\pr(c) = g\pr(f(c)) \cdot f\pr(c)$$
+   \end{theorem}
+   #+END_EXPORT
+
+** The Mean Value Theorem
+   #+NAME: The Mean Value Theorem
+   #+BEGIN_EXPORT latex
+   \begin{theorem}
+     If $f$ is differentiable on an open interval $(a,b)$ and if $f$ assumes its
+     maximum or minimum at a point $c \in (a,b)$, then $f\pr(c) = 0$.
+   \end{theorem}
+
+   \begin{theorem}
+     (Rolle's Theorem) Let $f$ be a continuous function on $[a,b]$ that is
+     differentiable on $(a,b)$ and such that $f(a) = f(b)$. Then there exists at
+     least one point $c$ in $(a,b)$ such that $f\pr(c) = 0$.
+   \end{theorem}
+
+   \begin{theorem}
+     (Mean Value Theorem) Let $f$ be a continuous function on $[a,b]$ that is
+     differentiable on $(a,b)$. Then there exists at least one point $c \in (a,b)$
+     such that $$f\pr(c) = \frac{f(b) - f(a)}{b - a}.$$
+   \end{theorem}
+
+   \begin{theorem}
+     Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$. If $f\pr(x)
+     = 0$ for all $x \in (a,b)$, then $f$ is constant on $[a,b]$.
+   \end{theorem}
+
+   \begin{corollary}
+     Let $f$ and $g$ be continuous an $[a,b]$ and differentiable on $(a,b)$.
+     Suppose that $f\pr(x) = g\pr(x)$ for all $x \in (a,b)$. Then there exists a
+     constant $C$ such that $f = g + C$ on $[a,b]$.
+   \end{corollary}
+
+   \begin{theorem}
+     Let f be differentiable on an interval $I$. Then 
+     \begin{enumerate}
+     \item if $f\pr(x) > 0$ for all $x \in I$, then $f$ is strictly increasing on
+       $I$, and
+     \item if $f\pr(x) < 0$ for all $x \in I$, then $f$ is strictly decreasing on
+       $I$.
+     \end{enumerate}
+   \end{theorem}
+    #+END_EXPORT
+
+   #+NAME: Intermediate Value Theorem for Derivatives
+   #+BEGIN_EXPORT latex
+   \begin{theorem}
+     (Intermediate Value Theorem for Derivatives) Let $f$ be differentiable on
+     $[a,b]$ and suppose that $k$ is a number between $f\pr(a)$ and $f\pr(b)$.
+     Then there exists a point $c \in (a,b)$ such that $f\pr(c) = k$.
+   \end{theorem}
+
+   \begin{theorem}
+     (Inverse Function Theorem) Let $f$ be differentiable on an interval $I$ and
+     $f\pr(x) \ne 0$ for all $x \in I$. Then $f$ is injective, $f^{-1}$ is
+     differentiable on $f(I)$, and $$(f^{-1})\pr(y) = \frac{1}{f\pr(x)},$$ where
+     $y = f(x)$
+   \end{theorem}
+   #+END_EXPORT
+
+** Taylor's Theorem
+   #+NAME: Taylor's Theorem
+   #+BEGIN_EXPORT latex
+   \begin{theorem}
+     (Taylor's Theorem) Let $f$ and its first $n$ derivatives be continuous on
+     $[a,b]$ and differentiable on $(a,b)$, and let $x_0 \in [a,b]$. Then for each
+     $x \in [a,b]$ with $x \ne x_0$ there exists a point $c$ between $x$ and $x_0$
+     such that
+     \begin{dmath*}
+       f(x) = f(x_0) + f\pr(x)(x - x_0) + \frac{f\pr\pr(x_0)}{2}(x - x_0)^2 + ... \\
+       + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + \frac{f^{(n+1)}(c)}{(n+1)!}(x - x_0)^{n+1}.
+     \end{dmath*}
+   \end{theorem}
+   #+END_EXPORT
+
+** Integration
+   #+NAME: The Riemann Integral
+   #+BEGIN_EXPORT latex
+   \begin{definition}[Partition]
+     Let $[a,b]$ be an interval in $\Real$. A \textbf{partition} $P$ of $[a,b]$ is
+     a finite set of points $\{ x_0, x_1, ..., x_n \}$ such that $$a = x_0 < x_1 <
+     ... < x_n = b.$$ If $P$ and $Q$ are two partitions of $[a,b]$ with $P \sube
+     Q$, then $Q$ is called a \textbf{refinement} of $P$.
+   \end{definition}
+
+   \begin{definition}[Upper and Lower Sum]
+     Suppose that $f$ is a bounded function defined on $[a,b]$ and that $P = \{
+     x_0, ..., x_n \}$ is a partition of $[a,b]$. For each $i = 1, ..., n$ we
+     let $$M_i(f) = \sup \{ f(x) : x \in [x_{i-1}, x_i] \}$$ and $$m_i(f) = \inf \{
+     f(x) : x \in [x_{i-1}, x_i] \}.$$ When only one function is under
+     consideration, we may abbreviate thes to $M_i$ and $m_i$, respectively.
+     Letting $\Delta x_i = x_i - x_{i-1} (i = 1, ..., n)$, we define the
+     \textbf{upper sum} of $f$ with respect to $P$ to be $$U(f,P) =
+     \sum_{i=1}^{n} M_i \Delta x_i,$$ and the \textbf{lower sum} of $f$ with respect
+     to $P$ to be $$L(f,P) = \sum_{i=1}^{n} m_i \Delta x_i.$$
+
+     Since we are assuming that $f$ is a bounded function on $[a,b]$, there
+     exist numbers $m$ and $M$ such that $m \le f(x) \le M$ for all $x \in [a,b]$.
+     Thus for any partition P of [a,b] we have $$m(b - a) \le L(f, P) \le U(f, P) \le
+     M(b - a).$$ This implies that the uuper and lower sums for $f$ form a
+     bounded set, and it guarantees the existence of the following upper and
+     lower integrals of $f$.
+
+     \begin{remark}[History]
+     (Sometimes $U(f,P)$ and $L(f,P)$ are called the upper and lower Darboux
+     sums in honor of Gaston Darboux (1842--1917), who first developed this
+     approach to the Riemann integral.)
+     \end{remark}
+   \end{definition}
+
+   \begin{definition}[Upper and Lower Integral]
+     Let $f$ be a bounded function defined on $[a,b]$. Then $$U(f) = \inf \{ U(f,
+     P) : P \text{ is a partition of } [a,b] \}$$ is called the \textbf{upper integral}
+     of $f$ on $[a,b]$. Similarly, $$L(f) = \sub \{ L(f, P) : P \text{ is a
+     partition of } [a,b] \}$$ is called the \textbf{lower integrals} of $f$ on
+     $[a,b]$, and we denote their common value by $\int_a^b f$ or by $\int_a^b f(x)
+     dx$. That is, if L(f) = U(f), then $$\int_a^b f = \int_a^b f(x) dx = L(f) =
+     U(f)$$ is the \textbf{Riemann integral} of $f$ on $[a,b]$.
+
+     When convenient, refer to the function $f$ as being \textbf{integrable} on
+     $[a,b]$ and call $\int_a^b f$ the \textbf{integral} of $f$ on $[a,b]$.
+   \end{definition}
+   #+END_EXPORT
+
+   #+NAME: Additional
+   #+BEGIN_EXPORT latex
+   \begin{theorem}
+     Let $f$ be a bounded function on $[a,b]$. If $P$ and $Q$ are partitions of
+     $[a,b]$ and $Q$ is a refinement of $P$, then $$L(f, P) \le L(f, Q) \le U(f, Q) \le
+     U(f, P).$$
+   \end{theorem}
+
+   \begin{theorem}
+     Let $f$ be a bounded function on $[a,b]$. Then $L(f) \le U(f)$.
+   \end{theorem}
+
+   \begin{theorem}
+     Let $f$ be a bounded function on $[a,b]$. Then $f$ is integrable $\iff$ for
+     each $\varepsilon > 0$ there exists a partition $P$ of $[a,b]$ such that $$U(f, P) -
+     L(f, P) < \varepsilon.$$
+   \end{theorem}
+   #+END_EXPORT
+
+   #+NAME: The Fundamental Theorem of Calculus
+   #+BEGIN_EXPORT latex
+   \begin{theorem}
+   (The Fundamental Theorem of Calculus I) Let $f$ be integrable on $[a,b]$. For
+   each $x \in [a,b]$, let $$F(x) = \int_a^x f(t) dt.$$ Then $F$ is uniformly
+   continuous on $[a,b]$. Furthermore, if $f$ is continuous on $c \in [a,b]$, then
+   $F$ is differentiable at $c$ and $F\pr(c) = f(c)$.
+   \end{theorem}
+   #+END_EXPORT
+
+** Infinite Series
+   #+NAME: Convergence of Infinite Series
+   #+BEGIN_EXPORT latex
+
+   #+END_EXPORT
